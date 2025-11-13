@@ -38,14 +38,34 @@ if (isset($_POST['submit'])) {
 
 <div class="login">
 	<form action="" method="POST">
-		<fieldset>
-			<legend>Login</legend>
-				<label for="user"></label>
-				<input type="text" id="user" name="user">
-				<label for="pass"></label>
-				<input type="text" id="pass" name="pass">
-				<button type="submit" name="submit">Submit</button>
-				<a href="register.php">Register</a>
-		</fieldset>
+        <br>
+			<h1>Login</h1>
+            <br>
+            <table>
+                <tr>
+                    <td><label for="user">Username</label></td>
+                </tr>
+                <tr>    
+                    <td><input type="text" id="user" name="user"></td>
+                </tr>
+                <tr>
+                    <td><label for="pass">Password</label></td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="pass" name="pass"></td>
+                </tr>
+                <tr>
+                    <th>
+                        <button type="submit" name="submit">Submit</button>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Belum Punya Akun? <a href="register.php"> Sekarang</a></p>
+                    </td>
+                </tr>
+            </table>
+            <br>
+
 	</form>
 </div>
