@@ -32,3 +32,5 @@ require_once 'includes/navbar.php';
 	</ul>
 	</div>
 </div>
+<?php
+require_once "includes/footer.php";

@@ -34,6 +34,7 @@ a {
 	border-radius: 10px;
 	font-size: 15px;
 	border: none;
+}
 .nav button {
   padding: 3px 10px;
   background-color: #bbdefb;
@@ -131,7 +132,9 @@ footer li {
 .login p {
   padding: 15px;
 }
-
+.login a:hover{
+	color: #1565c0;
+}
 /* Register */
 
 .register {

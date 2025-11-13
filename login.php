@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
             header('Location: siswa');
         }
     }else{
-            echo "<script>alert('maslaha')</script>";
+            echo "username atau password ada yang salah";
         }
 }
 
@@ -61,7 +61,7 @@ if (isset($_POST['submit'])) {
                 </tr>
                 <tr>
                     <td>
-                        <p>Belum Punya Akun? <a href="register.php"> Sekarang</a></p>
+                        <p>Belum Punya Akun? <a href="register.php"> Register    </a></p>
                     </td>
                 </tr>
             </table>
