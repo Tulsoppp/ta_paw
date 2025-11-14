@@ -8,7 +8,7 @@
 		<p>Sekolah ini berkomitmen untuk menciptakan lingkungan belajar yang inklusif, aman, dan menyenangkan. 
 			Melalui pendekatan pendidikan berbasis kebutuhan individual, setiap peserta didik didampingi agar mampu berkembang sesuai potensi dan kemampuannya.</p>
 	</div>
-	<button><a href="pendaftaran.php">Daftar Sekarang</a></button>
+	<button><a href="/ta_paw/siswa/pendaftaran.php">Daftar Sekarang</a></button>
 </div>
 <div class="dashboard1">
 	<div>

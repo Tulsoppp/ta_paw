@@ -313,3 +313,18 @@ footer li {
   margin: 20px auto;
   background-color: #4caf50;
 }
+
+/* harap Login Terlebih Dahulu */
+
+.harap_login {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  margin: 80px;
+  border-radius: 15px;
+  margin-left: 30%;
+  margin-right: 30%;
+  box-shadow: 5px 5px 0 0 rgb(160, 160, 160);
+}
