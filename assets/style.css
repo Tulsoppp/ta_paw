@@ -51,7 +51,7 @@ a {
 }
 
 .nav button:hover {
-  background-color: yellow;
+  background-color: #83b3ea;
 }
 .nav {
   padding: 0rem 1rem;
@@ -61,6 +61,7 @@ a {
   flex-direction: row;
   justify-content: space-between;
   border-bottom: blue 1px solid;
+  /* position: fixed; */
 }
 ul {
   list-style: none;
@@ -74,7 +75,7 @@ ul {
   color: rgb(0, 0, 0);
 }
 .nav a:hover {
-  color: yellow;
+  color: #6aa7ec;
 }
 
 /* footer */
@@ -89,10 +90,20 @@ footer {
 }
 footer h3 {
   font-size: 1rem;
+  color: white;
 }
 footer p,
-footer li {
+footer a {
   font-size: 0.8rem;
+  color: white;
+}
+
+footer a:href {
+  color: #000;
+}
+
+.media li {
+  color: white;
 }
 
 /* Login */
@@ -136,6 +147,7 @@ footer li {
   font-size: 16px;
   font-weight: bold;
   border: none;
+  color: white;
 }
 
 .login p {
@@ -236,6 +248,14 @@ footer li {
   margin-bottom: 20px;
   margin: 20px;
 }
+
+.dasbuton {
+  color: #6aa7ec;
+}
+
+.dashboard a:hover {
+  color: white;
+}
 .dashboard p {
   font-size: 1.1rem;
   line-height: 1.7;
@@ -249,11 +269,19 @@ footer li {
   font-size: 2rem;
 }
 
-.dashboard1 {
+.visi {
+  background-color: #fff;
+  padding: 20px 10px;
+  margin: 0 auto;
+  text-align: center;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.dashboard1 ol {
   background-color: #fff;
   padding: 40px 20px;
   margin: 0 auto;
-  text-align: center;
+  text-align: justify;
   padding-left: 10%;
   padding-right: 10%;
 }
@@ -351,6 +379,7 @@ footer li {
 /* Panduan PPDB */
 .bacgron_ppdb {
   background-color: #fff;
+  padding-bottom: 20px;
 }
 
 .judul_tengah {
@@ -388,6 +417,13 @@ footer li {
   box-shadow: 0 4px 6px rgba(216, 214, 214, 0.562);
   min-height: 150px;
 }
+.kolom_panduan_tgl {
+  text-align: center;
+  padding: 25px 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(216, 214, 214, 0.562);
+  min-height: 150px;
+}
 
 /* Detail Dokumen PPDB */
 .bacgron_detail {
@@ -411,7 +447,7 @@ footer li {
 }
 
 .kolom_detail .kolom_detail_1 {
-  background-color: #1565c0;
+  background-color: #2196f3;
   color: white;
   padding: 12px 10px;
   font-weight: bold;

@@ -56,7 +56,7 @@ if (isset($_POST['submit'])) {
                 </tr>
                 <tr>
                     <th>
-                        <button type="submit" name="submit">Submit</button>
+                        <button type="submit" name="submit">Login</button>
                     </th>
                 </tr>
                 <tr>

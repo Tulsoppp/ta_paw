@@ -49,7 +49,7 @@ require_once "../includes/navbarSiswa.php";
         
         <div class="form_isi">
             <label for="hp_siswa">No HP Siswa :</label>
-            <input type="number" id="hp_siswa" name="no_hp_siswa" required>
+            <input type="text" id="hp_siswa" name="no_hp_siswa" required>
         </div>
 
         <div class="form_isi">
@@ -157,12 +157,26 @@ require_once "../includes/navbarSiswa.php";
         
         <div class="form_isi">
             <label for="hp_wali">No HP Wali :</label>
-            <input type="number" id="hp_wali" name="no_hp_wali" required>
+            <input type="text" id="hp_wali" name="no_hp_wali" required>
         </div>
         
         <div class="form_isi">
             <label for="gaji_wali">Gaji Wali :</label>
-            <input type="number" id="gaji_wali" name="slip_gaji" required>
+            <input type="text" id="gaji_wali" name="slip_gaji" required>
+            <label for="gaji_wali">Gaji Wali :</label>
+            <select id="gaji_wali" name="slip_gaji" required>
+                <option value="">-- Pilih Nominal --</option>
+                <option value="1">0 Rp - 500.000 Rp</option>
+                <option value="2">500.001 Rp - 1.000.000 Rp</option>
+                <option value="3">1.000.001 Rp - 1.500.000 Rp</option>
+                <option value="4">1.500.001 Rp - 2.000.000 Rp</option>
+                <option value="5">2.000.001 Rp - 2.500.000 Rp</option>
+                <option value="6">2.500.001 Rp - 3.000.000 Rp</option>
+                <option value="7">3.000.001 Rp - 3.500.000 Rp</option>
+                <option value="8">3.500.001 Rp - 4.000.000 Rp</option>
+                <option value="9">4.000.001 Rp - 4.500.000 Rp</option>
+                <option value="10">4.500.001 Rp - 5.000.000 Rp</option>
+            </select>
         </div>
 
         <div class="form-actions">
