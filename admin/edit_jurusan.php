@@ -9,6 +9,8 @@ require_once '../includes/navbarAdmin.php';
             ":KUOTA_JURUSAN"=>$_POST["KUOTA_JURUSAN"],
             ":id"=>$id
         ]);
+
+        header("Location:jurusan.php");
     }
 ?>
 <div>

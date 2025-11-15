@@ -1,6 +1,7 @@
 <?php
     require_once 'database.php';
     require_once 'includes/header.php';
+    require_once 'includes/navbar.php';
 ?>
 <div class="register">
     <form action="" method="POST">
@@ -51,4 +52,5 @@
 <?php
 if(isset($_POST['submit'])){
     register($_POST);
+    header("Location:login.php");
 }
