@@ -13,13 +13,13 @@ require_once "../includes/navbarSiswa.php";
 
         <div class="form_isi">
             <label for="nama_lengkap">Nama Lengkap :</label>
-            <input type="text" id="nama_lengkap" name="nama_siswa" required>
+            <input type="text" id="nama_lengkap" name="nama_siswa">
         </div>
 
         <div class="form_isi">
             <label>Jenis Kelamin :</label>
             <div class="radio-group-horizontal">
-                <input type="radio" id="laki-laki" name="jenis_kelamin" value="Laki-laki" required>
+                <input type="radio" id="laki-laki" name="jenis_kelamin" value="Laki-laki">
                 <label for="laki-laki">Laki-laki</label>
                 
                 <input type="radio" id="perempuan" name="jenis_kelamin" value="Perempuan">
@@ -29,32 +29,32 @@ require_once "../includes/navbarSiswa.php";
 
         <div class="form_isi">
             <label>Agama :</label>
-            <input type="text" id="agama" name="agama_siswa" required>
+            <input type="text" id="agama" name="agama_siswa">
         </div>
         
         <div class="form_isi">
             <label for="tempat_lahir">Tempat Lahir :</label>
-            <input type="text" id="tempat_lahir" name="tempat_lahir" required>
+            <input type="text" id="tempat_lahir" name="tempat_lahir">
         </div>
         
         <div class="form_isi">
             <label for="tgl_lahir">Tanggal Lahir :</label>
-            <input type="date" id="tgl_lahir" name="tanggal_lahir" required>
+            <input type="date" id="tgl_lahir" name="tanggal_lahir">
         </div>
         
         <div class="form_isi">
             <label for="alamat_siswa">Alamat Siswa :</label>
-            <input type="text" id="alamat_siswa" name="alamat_siswa" required>
+            <input type="text" id="alamat_siswa" name="alamat_siswa">
         </div>
         
         <div class="form_isi">
             <label for="hp_siswa">No HP Siswa :</label>
-            <input type="text" id="hp_siswa" name="no_hp_siswa" required>
+            <input type="text" id="hp_siswa" name="no_hp_siswa">
         </div>
 
         <div class="form_isi">
             <label for="jurusan">Pilihan Jurusan:</label>
-            <select id="jurusan" name="id_jurusan" required>
+            <select id="jurusan" name="id_jurusan">
                 <option value="">-- Pilih Jurusan --</option>
                 <option value="1">IPA (Ilmu Pengetahuan Alam)</option>
                 <option value="2">IPS (Ilmu Pengetahuan Sosial)</option>
@@ -65,7 +65,7 @@ require_once "../includes/navbarSiswa.php";
         <hr>
         <div class="form_isi">
             <label for="kebutuhan">Pilih jika siswa memiliki kebutuhan khusus/kekurangan:</label>
-            <select id="kebutuhan" name="id_kebutuhan" required>
+            <select id="kebutuhan" name="id_kebutuhan">
                 <option value="">-- Pilih Kebutuhan --</option>
                 <option value="1">Normal</option>
                 <option value="2">Tunanetra</option>
@@ -82,7 +82,7 @@ require_once "../includes/navbarSiswa.php";
                 id="pas_foto" 
                 name="foto_siswa" 
                 accept=".jpg, .jpeg, .png" 
-                required>
+            >
         </div>
 
         <div class="form_isi">
@@ -91,7 +91,7 @@ require_once "../includes/navbarSiswa.php";
                 id="pas_foto" 
                 name="foto_siswa" 
                 accept=".jpg, .jpeg, .png" 
-                required>
+            >
         </div>
 
         <div class="form_isi">
@@ -100,7 +100,7 @@ require_once "../includes/navbarSiswa.php";
                 id="pas_foto" 
                 name="foto_siswa" 
                 accept=".jpg, .jpeg, .png" 
-                required>
+            >
         </div>
         
         <div class="form_isi">
@@ -109,7 +109,7 @@ require_once "../includes/navbarSiswa.php";
                 id="pas_foto" 
                 name="foto_siswa" 
                 accept=".jpg, .jpeg, .png" 
-                required>
+            >
         </div>
 
         <h2>Data Wali</h2>
@@ -117,13 +117,13 @@ require_once "../includes/navbarSiswa.php";
 
         <div class="form_isi">
             <label for="nama_wali">Nama Wali :</label>
-            <input type="text" id="nama_wali" name="nama_wali" required>
+            <input type="text" id="nama_wali" name="nama_wali">
         </div>
 
         <div class="form_isi">
             <label>Status Wali (Orang Tua) :</label>
             <div class="radio-group-horizontal">
-                <input type="radio" id="hidup" name="status_wali" value="Hidup" required>
+                <input type="radio" id="hidup" name="status_wali" value="Hidup">
                 <label for="hidup">Masih Hidup</label>
                 
                 <input type="radio" id="wafat" name="status_wali" value="Wafat">
@@ -134,7 +134,7 @@ require_once "../includes/navbarSiswa.php";
         <div class="form_isi">
             <label>Hubungan Wali :</label>
             <div class="radio-group-horizontal">
-                <input type="radio" id="kandung" name="hubungan" value="Kandung" required>
+                <input type="radio" id="kandung" name="hubungan" value="Kandung">
                 <label for="kandung">Anak Kandung</label>
                 
                 <input type="radio" id="angkat" name="hubungan" value="Angkat">
@@ -147,24 +147,22 @@ require_once "../includes/navbarSiswa.php";
         
         <div class="form_isi">
             <label for="pekerjaan_wali">Pekerjaan Wali :</label>
-            <input type="text" id="pekerjaan_wali" name="pekerjaan_wali" required>
+            <input type="text" id="pekerjaan_wali" name="pekerjaan_wali">
         </div>
 
         <div class="form_isi">
             <label for="alamat_wali">Alamat Wali :</label>
-            <input type="text" id="alamat_wali" name="alamat_wali" required>
+            <input type="text" id="alamat_wali" name="alamat_wali">
         </div>
         
         <div class="form_isi">
             <label for="hp_wali">No HP Wali :</label>
-            <input type="text" id="hp_wali" name="no_hp_wali" required>
+            <input type="text" id="hp_wali" name="no_hp_wali">
         </div>
         
         <div class="form_isi">
             <label for="gaji_wali">Gaji Wali :</label>
-            <input type="text" id="gaji_wali" name="slip_gaji" required>
-            <label for="gaji_wali">Gaji Wali :</label>
-            <select id="gaji_wali" name="slip_gaji" required>
+            <select id="gaji_wali" name="slip_gaji">
                 <option value="">-- Pilih Nominal --</option>
                 <option value="1">0 Rp - 500.000 Rp</option>
                 <option value="2">500.001 Rp - 1.000.000 Rp</option>
