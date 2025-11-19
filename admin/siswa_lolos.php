@@ -6,13 +6,13 @@ $daftar=lulus();
 ?>
 <div class="pendaftar">
     <div>
-        <h2>Siswa</h2>
+        <h2>Siswa Diterima</h2>
         <table>
             <tr>
                 <th>Nama</th>
                 <th>Jurusan</th>
                 <th>Kebutuhan</th>
-                <th>status</th>
+                <th>Status</th>
             </tr>
             <?php 
             foreach($daftar as $row): 

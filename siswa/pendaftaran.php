@@ -128,11 +128,11 @@ $kebutuhan=kebutuhan();
                 <input type="checkbox" id="id_kebutuhan" name="kebutuhan" value="<?= $kbth['ID_KEBUTUHAN'] ?>"><span> <?= $kbth['NAMA_KEBUTUHAN'] ?></span> 
                 <?php endforeach; ?>
             </div>
-            <br>
+            <!-- <br>
             <div class="form_isi">
             <label for="kebutuhan">Kebutuhan Lainnya :</label>
             <input type="text" id="id_kebutuhan" name="kebutuhan" placeholder="lainnya">
-        </div>
+        </div> -->
         </div>
         <h2>Data Dokumen</h2>
         <hr>

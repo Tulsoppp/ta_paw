@@ -100,7 +100,6 @@ footer a:href {
 }
 /* container */
 
-
 /* Login */
 .login {
   font-family: sans-serif;
@@ -152,7 +151,7 @@ footer a:href {
 .login p {
   padding: 15px;
 }
-.login a{
+.login a {
   color: #1565c0;
 }
 
@@ -204,7 +203,7 @@ footer a:href {
   margin-top: 15px;
   color: white;
 }
-.register a{
+.register a {
   color: #2196f3;
 }
 footer p,
@@ -215,12 +214,10 @@ footer li {
 /* header */
 /* dashboard */
 
-
-
 .dashboard {
   min-height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.612), rgba(0, 0, 0, 0.5)),
-    url("../img/sekolah.jpg") center/cover no-repeat; 
+    url("../img/sekolah.jpg") center/cover no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -273,19 +270,18 @@ footer li {
   font-weight: 600;
   font-size: 2rem;
 }
-.container{
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 50px;
   gap: 20px;
-
 }
-.container > div{
+.container > div {
   border-radius: 20px;
 }
 
-.dashboard1{
+.dashboard1 {
   width: 85%;
   background-color: white;
   text-align: center;
@@ -306,7 +302,6 @@ footer li {
 .dashboard1 ol li {
   font-size: 20px;
 }
-
 
 /* jurusan */
 .jurusan {
@@ -349,7 +344,7 @@ footer li {
   /* cursor: pointer; */
   /* transition: 0.2s; */
 }
-.jurusan button:hover{
+.jurusan button:hover {
   background-color: #83b3ea;
 }
 .jurusan > button {
@@ -434,7 +429,6 @@ footer li {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
-
 
 .kolom_panduan {
   text-align: center;
@@ -637,14 +631,14 @@ footer li {
   margin-right: auto;
 }
 /* admin dashboard */
-.container_admin{
+.container_admin {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 30px;
   gap: 30px;
 }
-.container_admin>h1{
+.container_admin > h1 {
   color: #1565c0;
 }
 .dashboard_admin {
@@ -666,23 +660,23 @@ footer li {
 .dashboard_admin h3 {
   color: #1565c0;
 }
-.error { 
-  color: #D8000C; 
-  font-size: 0.9em; 
-  display: block; 
-  margin-top: 5px; 
+.error {
+  color: #d8000c;
+  font-size: 0.9em;
+  display: block;
+  margin-top: 5px;
 }
-        
-.sukses { 
-  color: #4F8A10; 
-  font-weight: bold; 
-  border: 1px solid #4F8A10; 
-  background-color: #DFF2BF; 
-  padding: 10px; 
-  border-radius: 5px; 
-  margin-bottom: 15px; 
+
+.sukses {
+  color: #4f8a10;
+  font-weight: bold;
+  border: 1px solid #4f8a10;
+  background-color: #dff2bf;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
 }
-.admin_jurusan{
+.admin_jurusan {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -690,12 +684,150 @@ footer li {
   text-align: center;
   gap: 20px;
 }
-.admin_jurusan>div{
+.admin_jurusan > div {
   background-color: white;
   padding: 20px;
   border-radius: 10px;
   width: 150px;
 }
-.admin_jurusan h3{
+.admin_jurusan h3 {
   color: #1565c0;
+}
+
+/* Edit Kouta */
+.edit_kouta {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7;
+  margin: 90px auto;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.edit_kouta > div {
+  width: 100%;
+  padding: 30px;
+}
+
+.edit_kouta h2 {
+  background-color: #4caf50;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  padding: 15px 0;
+  margin: -30px -30px 30px -30px;
+}
+
+.edit_kouta label {
+  display: block;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.edit_kouta input {
+  padding: 12px;
+  height: auto;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.edit_kouta table {
+  width: 100%;
+}
+
+.edit_kouta tr,
+td {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.edit_kouta button {
+  padding: 10px 25px;
+  border: none;
+  background-color: #2196f3;
+  color: white;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Tambah Jurusan */
+.tambah_jurusan {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7;
+  margin: 50px auto;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.tambah_jurusan > div {
+  width: 100%;
+  padding: 30px;
+}
+
+.tambah_jurusan h2 {
+  background-color: #4caf50;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  padding: 15px 0;
+  margin: -30px -30px 30px -30px;
+}
+
+.tambah_jurusan label {
+  display: block;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.tambah_jurusan input {
+  padding: 12px;
+  height: auto;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.tambah_jurusan table {
+  width: 100%;
+}
+
+.tambah_jurusan tr,
+td {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.tambah_jurusan button {
+  padding: 10px 25px;
+  border: none;
+  background-color: #2196f3;
+  color: white;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
 }

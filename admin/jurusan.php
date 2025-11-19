@@ -19,12 +19,12 @@
             <td>
                 <a href="edit_jurusan.php?ID_JURUSAN=<?=$data['ID_JURUSAN']?>">
                     <button name="edit">
-                        edit
+                        Edit
                     </button>
                 </a>
                 <a href="hapus_jurusan.php?ID_JURUSAN=<?=$data['ID_JURUSAN']?>">
                     <button name="hapus">
-                        hapus
+                        Hapus
                     </button>
                 </a>
             </td>

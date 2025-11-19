@@ -12,7 +12,7 @@ $daftar=pendaftar();
                 <th>Nama</th>
                 <th>Jurusan</th>
                 <th>Kebutuhan</th>
-                <th>status</th>
+                <th>Status</th>
                 <th>Aksi</th>
             </tr>
             <?php foreach($daftar as $row): ?>
@@ -24,7 +24,7 @@ $daftar=pendaftar();
                 <td>
                     <a href="edit_status.php?ID_PENDAFTARAN=<?=$row['ID_PENDAFTAR_SISWA']?>&kondisi=lulus">
                         <button name="lulus">
-                            lulus
+                            Lulus
                         </button>
                     </a>
                     <a href="edit_status.php?ID_PENDAFTARAN=<?=$row['ID_PENDAFTAR_SISWA']?>&kondisi=gagal">

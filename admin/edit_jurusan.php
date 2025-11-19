@@ -7,13 +7,21 @@ require_once '../includes/navbarAdmin.php';
         edit_kuota($id);
     }
 ?>
-<div>
-    <form action="" method="POST">
-        <fieldset>
-            <legend>Edit Jurusan</legend>
-            <label for="">Kuota :</label>
-            <input type="text" name="KUOTA_JURUSAN">
-            <button type="submit">Submit</button>
-        </fieldset>
-    </form>
+<div class="edit_kouta">
+    <div>
+        <h2>Edit Kuota</h2>
+        <table>
+            <tr>
+                <td>
+                    <label for="">Kuota :</label>
+                    <input type="text" name="KUOTA_JURUSAN">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit">Edit</button>
+                </td>
+            </tr>
+        </table>
+     </div>
 </div>

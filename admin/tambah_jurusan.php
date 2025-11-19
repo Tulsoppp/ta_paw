@@ -13,14 +13,27 @@
         header("Location:jurusan.php");
     }
 ?>
-<div>
-    <form action="" method="POST">
-        <fieldset>
-            <label for="">Nama Jurusan:</label>
-            <input type="text" name="nama_jurusan">
-            <label for="">Kuota :</label>
-            <input type="text" name="kuota">
-            <button type="submit">Tambah</button>
-        </fieldset>
-    </form>
+<div class="tambah_jurusan">
+    <div>
+        <h2>Tambah jurusan</h2>
+        <table>
+            <tr>
+                <td>
+                    <label for="">Nama Jurusan :</label>
+                    <input type="text" name="nama_jurusan">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="">Kouta :</label>
+                    <input type="text" name="kuota">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit">Tambah</button>
+                </td>
+            </tr>
+        </table>
+     </div>
 </div>
