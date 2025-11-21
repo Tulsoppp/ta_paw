@@ -129,9 +129,11 @@ $kebutuhan=kebutuhan();
         <hr>
         <div class="form_isi">
              <label for="kebutuhan">Masukan Jika Siswa Memiliki Kebutuhan Khusus :</label>
-            <div class="radio-group-horizontal">
+            <div class="kebutuhan">
                 <?php foreach($kebutuhan as $kbth): ?>
-                <input type="checkbox" id="id_kebutuhan" name="kebutuhan" value="<?= $kbth['ID_KEBUTUHAN'] ?>"><span> <?= $kbth['NAMA_KEBUTUHAN'] ?></span> 
+                    <div>
+                        <input type="checkbox" id="id_kebutuhan" name="kebutuhan" value="<?= $kbth['ID_KEBUTUHAN'] ?>"><span> <?= $kbth['NAMA_KEBUTUHAN'] ?></span> 
+                    </div>
                 <?php endforeach; ?>
             </div>
             <!-- <br>
@@ -175,37 +177,40 @@ $kebutuhan=kebutuhan();
                 accept=".jpg, .jpeg, .png" 
             >
         </div>
-
-        <h2>Data Wali</h2>
+        <h2>Data Ayah & Ibu</h2>
         <hr>
-
         <div class="form_isi">
             <label for="nama_wali">Nama Ayah :</label>
             <input type="text" id="nama_wali" name="nama_ayah" placeholder="nama_lengkap_ayah">
         </div>
 
-        <div>
-            <label for="">Keadaan Ayah :</label>
-            <input type="radio" id="hidup" name="keadaan_ayah" value="Hidup">Masih Hidup
-            <input type="radio" id="meninggal" name="keadaan_ayah" value="Meninggal">Meninggal
+        <div class="form_isi">
+                <label for="">Keadaan Ayah :</label>
+                <div class="radio-group-horizontal">
+                    <input type="radio" id="masih_hidup" name="keadaan" value="masih hidup">
+                    <label for="masih hidup">Masih Hidup</label>
+                    
+                    <input type="radio" id="sudah_tidak_ada" name="keadaan" value="sta">
+                    <label for="sta">Sudah Tidak Ada</label>
+                </div>
         </div>
 
-        <div>
+        <div class="form_isi">
             <label for="">Alamat Ayah :</label>
             <input type="text" id="alamat_ayah" name="alamat_ayah" placeholder="alamat_ayah">
         </div>
 
-        <div>
+        <div class="form_isi">
             <label for="">No Telepon Ayah : </label>
             <input type="text" id="no_hp_ayah" name="no_hp_ayah" placeholder="no_hp_ayah">
         </div>
 
-        <div>
+        <div class="form_isi">
             <label for="">Pekerjaan Ayah</label>
             <input type="text" id="pekerjaan_ayah" name="pekerjaan_ayah" placeholder="pekerjaan_ayah">
         </div>
 
-        <div>
+        <div class="form_isi">
             <label for="">Gaji Ayah : </label>
             <input type="text" id="gaji_ayah" name="gaji_ayah" placeholder="gaji_ayah">
         </div>
@@ -216,28 +221,33 @@ $kebutuhan=kebutuhan();
             <input type="text" id="nama_wali" name="keadaan_ibu" placeholder="nama_lengkap_ayah">
         </div>
 
-        <div>
+        <div class="form_isi">
             <label for="">Keadaan Ibu :</label>
-            <input type="radio" id="hidup" name="keadaan_ibu" value="Hidup">Masih Hidup
-            <input type="radio" id="meninggal" name="keadaan_ibu" value="Meninggal">Meninggal
+                <div class="radio-group-horizontal">
+                    <input type="radio" id="masih_hidup" name="keadaan" value="masih hidup">
+                    <label for="masih hidup">Masih Hidup</label>
+                    
+                    <input type="radio" id="sudah_tidak_ada" name="keadaan" value="sta">
+                    <label for="sta">Sudah Tidak Ada</label>
+                </div>
         </div>
 
-        <div>
+        <div class="form_isi">
             <label for="">Alamat Ibu :</label>
             <input type="text" id="alamat_ayah" name="alamat_ibu" placeholder="alamat_ayah">
         </div>
 
-        <div>
+        <div class="form_isi">
             <label for="">No Telepon Ibu : </label>
             <input type="text" id="no_hp_ayah" name="no_hp_ibu" placeholder="no_hp_ayah">
         </div>
 
-        <div>
+        <div class="form_isi">
             <label for="">Pekerjaan Ibu</label>
             <input type="text" id="pekerjaan_ayah" name="pekerjaan_ibu" placeholder="pekerjaan_ayah">
         </div>
 
-        <div>
+        <div class="form_isi">
             <label for="">Gaji Ibu : </label>
             <input type="text" id="gaji_ayah" name="gaji_ibu" placeholder="gaji_ayah">
         </div>        

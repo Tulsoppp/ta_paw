@@ -35,6 +35,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $stmnt->execute([
         ':ID_STATUS'=>1,
         ':ID_JURUSAN'=>$_POST['id_jurusan'],
+        ':ID_AKUN_SISWA'=> $_POST['id_akun'],
         ':ID_SISWA'=> $_POST['id_akun'],
         ':NAMA_LENGKAP'=> $_POST['nama_lengkap'],
         ':KARTU_KELUARGA'=>$name_kk,
@@ -47,6 +48,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         ':AGAMA'=>$_POST['agama'],
         ':FOTO_SISWA'=>$name_foto,
         ':NO_HP_SISWA'=>$_POST['no_hp_siswa'],
+        ':NAMA_WALI'=>$_POST['nama_wali'],
+        ':ALAMAT_WALI'=>$_POST['alamat_wali'],
+        ':NO_HP_WALI'=>$_POST['no_hp_wali'],
+        ':HUBUNGAN'=>$_POST['hubungan'],
+        ':PEKERJAAN_WALI'=>$_POST['pekerjaan_wali'],
+        ':SLIP_GAJI'=>$_POST['slip_gaji']
+
         ':NAMA_AYAH'=>$_POST['nama_ayah'],
         ':KEADAAN_AYAH'=>$_POST['keadaan_ayah'],
         ':ALAMAT_AYAH'=>$_POST['alamat_ayah'],

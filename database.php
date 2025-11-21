@@ -141,3 +141,18 @@ function login($user,$pass){
 
 //     $stmnt=$pdo
 // }
+
+// Profil Siswa
+function profil($id) {
+    global $pdo;
+    $stmnt=$pdo->prepare
+    ("SELECT*
+    FROM akun_siswa
+    WHERE ID_AKUN_SISWA = :id
+    ");
+    $stmnt->execute([
+        ':id'=>$id
+    ]);
+    $profil=$stmnt->fetch();
+    return $profil;
+}

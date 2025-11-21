@@ -16,7 +16,7 @@
 		<h1>MISI</h1>
 		<ol>
 			<li>Mewujudkan Ekosistem Pembelajaran Adaptif: Menciptakan dan menyelenggarakan program pendidikan yang adaptif dan diferensiasi sesuai dengan kebutuhan, minat, dan potensi unik setiap peserta didik (termasuk Anak Berkebutuhan Khusus/ABK).</li>
-			<li>Menumbuhkan Karakter dan Kemandirian: Mengembangkan peserta didik yang memiliki karakter Pancasila, integritas tinggi, serta memiliki kemampuan hidup mandiri (life skill) yang kuat.</li>
+			<li>Menumbuhkan Karakter dan Kemandirian: Mengembangkan peserta didik yangs memiliki karakter Pancasila, integritas tinggi, serta memiliki kemampuan hidup mandiri (life skill) yang kuat.</li>
 			<li>Mengoptimalkan Potensi Prestasi: Memfasilitasi pengembangan bakat, minat, dan potensi peserta didik agar mencapai prestasi akademik dan non-akademik yang unggul melalui pendampingan khusus.</li>
 			<li>Menguatkan Kompetensi Tenaga Pendidik: Secara berkelanjutan meningkatkan kompetensi profesional guru dalam praktik pembelajaran inklusif, strategi diferensiasi, dan penggunaan teknologi pendidikan.</li>
 			<li>Membangun Kemitraan Strategis: Menjalin sinergi yang kuat dan berkelanjutan dengan orang tua, lembaga layanan profesional (psikolog/terapis), dan komunitas untuk menjamin tumbuh kembang holistik peserta didik.</li>

@@ -388,7 +388,7 @@ footer li {
 /* Panduan PPDB */
 .backgron_ppdb {
   background-color: #fff;
-  width: 80%;
+  width: 88%;
   padding-bottom: 50px;
   padding-top: 5%;
 }
@@ -830,4 +830,9 @@ td {
   font-weight: 600;
   cursor: pointer;
   width: 100%;
+}
+
+.kebutuhan {
+  display: flex;
+  flex-direction: column;
 }
