@@ -19,7 +19,7 @@ function val_alpha(&$errors, $field_name, $value, $message) {
 }
 
 function val_alphanumeric(&$errors, $field_name, $value, $message) {
-    if (!empty(trim($value)) && !preg_match("/^[a-zA-Z0-9]+$/",$value)) {
+    if (!empty(trim($value)) && !preg_match("/^[a-zA-Z0-9 ]+$/",$value)) {
         $errors[$field_name] = $message;
     }
 }
@@ -53,12 +53,10 @@ function val_matches(&$errors, $field_name, $value1, $value2, $message) {
 }
 
 function val_email(&$errors, $field_name, $value, $message) {
-    // Pola untuk email dasar
     $pattern = "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/";
     if (!empty(trim($value)) && !preg_match($pattern, $value)) {
         $errors[$field_name] = $message;
     }
 }
-
 
 ?>

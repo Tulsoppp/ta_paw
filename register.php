@@ -13,25 +13,23 @@ $email = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    //Ambil semua data dari form
     $nama = $_POST['nama'];
     $password = $_POST['pass'];
     $email = $_POST['email'];
 
-    // Nama (Wajib, Alfabet)
     val_required($errors, 'nama', $nama, 'Nama wajib diisi.');
     val_alpha($errors, 'nama', $nama, 'Nama harus berupa huruf dan spasi.');
 
-    //  Password (Wajib, Format/Panjang Minimal 8)
     val_required($errors, 'pass', $password, 'Password wajib diisi.');
     val_password_format($errors, 'pass', $password, 8, 'Password minimal 8 karakter.'); 
 
     val_required($errors, 'email', $email, 'Email wajib diisi.');
-    val_email($errors, 'email', $email, 'Harus menggunakan email.'); 
+    val_email($errors, 'email', $email, 'Format email salah.'); 
 
 
     if (empty($errors)) {
-        $pesan_sukses = "SELAMAT! Semua data yang Anda masukkan VALID.";
+        register($_POST);
+        Location: login.php;
     }
 }
 
@@ -80,8 +78,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </table> 
     </form>
 </div>
-<?php
-if(isset($_POST['submit'])){
-    register($_POST);
-    header("Location:login.php");
-}
