@@ -29,20 +29,22 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
     $stmnt=$pdo->prepare
     ("INSERT INTO 
-    pendaftaran (ID_STATUS_SISWA,ID_JURUSAN,ID_AKUN_SISWA,KARTU_KELUARGA,AKTA_KELAHIRAN,IJAZAH,JENIS_KELAMIN,ALAMAT_SISWA,TEMPAT_LAHIR,TANGGAL_AHIR,AGAMA,FOTO_SISWA,NO_HP_SISWA,NAMA_WALI,ALAMAT_WALI,NO_HP_WALI,HUBUNGAN,PEKERJAAN_WALI,SLIP_GAJI)
+    pendaftaran (ID_STATUS,ID_JURUSAN,ID_SISWA,NAMA_LENGKAP,KARTU_KELUARGA,AKTA_KELAHIRAN,IJAZAH,GENDER,ALAMAT_SISWA,TEMPAT_LAHIR,TANGGAL_LAHIR,AGAMA,FOTO_SISWA,NO_HP_SISWA,NAMA_AYAH,KEADAAN_AYAH,ALAMAT_AYAH,NO_HP_AYAH,PEKERJAAN_AYAH,GAJI_AYAH,NAMA_IBU,KEADAAN_IBU,ALAMAT_IBU,NO_HP_IBU,PEKERJAAN_IBU,GAJI_IBU)
     VALUES
-    (:ID_STATUS_SISWA,:ID_JURUSAN,:ID_AKUN_SISWA,:KARTU_KELUARGA,:AKTA_KELAHIRAN,:IJAZAH,:JENIS_KELAMIN,:ALAMAT_SISWA,:TEMPAT_LAHIR,:TANGGAL_AHIR,:AGAMA,:FOTO_SISWA,:NO_HP_SISWA,:NAMA_WALI,:ALAMAT_WALI,:NO_HP_WALI,:HUBUNGAN,:PEKERJAAN_WALI,:SLIP_GAJI)");
+    (:ID_STATUS,:ID_JURUSAN,:ID_SISWA,:NAMA_LENGKAP,:KARTU_KELUARGA,:AKTA_KELAHIRAN,:IJAZAH,:GENDER,:ALAMAT_SISWA,:TEMPAT_LAHIR,:TANGGAL_LAHIR,:AGAMA,:FOTO_SISWA,:NO_HP_SISWA,:NAMA_AYAH,:KEADAAN_AYAH,:ALAMAT_AYAH,:NO_HP_AYAH,:PEKERJAAN_AYAH,:GAJI_AYAH,:NAMA_IBU,:KEADAAN_IBU,:ALAMAT_IBU,:NO_HP_IBU,:PEKERJAAN_IBU,:GAJI_IBU)");
     $stmnt->execute([
-        ':ID_STATUS_SISWA'=>1,
+        ':ID_STATUS'=>1,
         ':ID_JURUSAN'=>$_POST['id_jurusan'],
         ':ID_AKUN_SISWA'=> $_POST['id_akun'],
+        ':ID_SISWA'=> $_POST['id_akun'],
+        ':NAMA_LENGKAP'=> $_POST['nama_lengkap'],
         ':KARTU_KELUARGA'=>$name_kk,
         ':AKTA_KELAHIRAN'=>$name_akta,
         ':IJAZAH'=>$name_ijazah,
-        ':JENIS_KELAMIN'=>$_POST['jenis_kelamin'],
+        ':GENDER'=>$_POST['jenis_kelamin'],
         ':ALAMAT_SISWA'=>$_POST['alamat_siswa'],
         ':TEMPAT_LAHIR'=>$_POST['tempat_lahir'],
-        ':TANGGAL_AHIR'=>$_POST['tanggal_lahir'],
+        ':TANGGAL_LAHIR'=>$_POST['tanggal_lahir'],
         ':AGAMA'=>$_POST['agama'],
         ':FOTO_SISWA'=>$name_foto,
         ':NO_HP_SISWA'=>$_POST['no_hp_siswa'],
@@ -53,12 +55,24 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         ':PEKERJAAN_WALI'=>$_POST['pekerjaan_wali'],
         ':SLIP_GAJI'=>$_POST['slip_gaji']
 
+        ':NAMA_AYAH'=>$_POST['nama_ayah'],
+        ':KEADAAN_AYAH'=>$_POST['keadaan_ayah'],
+        ':ALAMAT_AYAH'=>$_POST['alamat_ayah'],
+        ':NO_HP_AYAH'=>$_POST['no_hp_ayah'],
+        ':PEKERJAAN_AYAH'=>$_POST['pekerjaan_ayah'],
+        ':GAJI_AYAH'=>$_POST['gaji_ayah'],
+        ':NAMA_IBU'=>$_POST['nama_ibu'],
+        ':KEADAAN_IBU'=>$_POST['keadaan_ibu'],
+        ':ALAMAT_IBU'=>$_POST['alamat_ibu'],
+        ':NO_HP_IBU'=>$_POST['no_hp_ibu'],
+        ':PEKERJAAN_IBU'=>$_POST['pekerjaan_ibu'],
+        ':GAJI_IBU'=>$_POST['gaji_ibu']
     ]);
     $stmnt2=$pdo->prepare
-    ("INSERT INTO pendaftaran_kebutuhan (ID_PENDAFTAR_SISWA,ID_KEBUTUHAN) 
-    VALUES (:ID_PENDAFTAR_SISWA,:ID_KEBUTUHAN)");
+    ("INSERT INTO kebutuhan_pendaftaran (ID_PENDAFTARAN,ID_KEBUTUHAN) 
+    VALUES (:ID_PENDAFTARAN,:ID_KEBUTUHAN)");
     $stmnt2->execute([
-        ':ID_PENDAFTAR_SISWA'=>$lastIdPendaftar['ID_PENDAFTAR_SISWA'],
+        ':ID_PENDAFTARAN'=>$lastIdPendaftar['ID_PENDAFTARAN'],
         ':ID_KEBUTUHAN'=>$_POST['kebutuhan']
     ]);
 }

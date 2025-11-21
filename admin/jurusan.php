@@ -31,5 +31,5 @@
         </tr>
         <?php endforeach; ?>
     </table>
-    <button><a href="tambah_jurusan.php">Tambah Jurusan</a></button>
+    <a href="tambah_jurusan.php"><button>Tambah Jurusan</button></a>
 </div>

@@ -1,7 +1,7 @@
 <?php
 // require_once '../cekLogin.inc';
 session_start();
-if(isset($_SESSION['isAdmin']) || $_SESSION['isAdmin']!=true){
+if(!isset($_SESSION['isAdmin'])){
     require_once '../cekLogin.inc';
     exit();
 }

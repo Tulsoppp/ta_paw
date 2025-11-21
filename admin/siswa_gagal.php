@@ -18,10 +18,10 @@ $daftar=gagal();
             foreach($daftar as $row): 
             ?>
             <tr>
-                <td><?=$row['NAMA_AKUN_SISWA']?></td>
+                <td><?=$row['NAMA_LENGKAP']?></td>
                 <td><?=$row['NAMA_JURUSAN']?></td>
                 <td><?=$row['NAMA_KEBUTUHAN']?></td>
-                <td><?=$row['JENIS_STATUS_SISWA']?></td>
+                <td><?=$row['KET_STATUS']?></td>
             </tr>
             <?php endforeach;?>
         </table>

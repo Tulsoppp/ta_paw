@@ -5,12 +5,11 @@
 
 
     if($_SERVER["REQUEST_METHOD"]=="POST"){
-        $stmnt=$pdo->prepare("INSERT INTO jurusan (NAMA_JURUSAN,KUOTA_JURUSAN) VALUES (:NAMA_JURUSAN,:KUOTA_JURUSAN)");
+        $stmnt=$pdo->prepare("INSERT INTO kebutuhan VALUES (NULL,:NAMA_KEBUTUHAN)");
         $stmnt->execute([
-            ":NAMA_JURUSAN"=> $_POST["nama_jurusan"],
-            ":KUOTA_JURUSAN"=> $_POST['kuota']
+            ":NAMA_KEBUTUHAN"=> $_POST["nama_kebutuhan"]
         ]);
-        header("Location:jurusan.php");
+        header("Location:kebutuhan.php");
     }
 ?>
 <div class="tambah_jurusan">
@@ -20,14 +19,8 @@
         <table>
             <tr>
                 <td>
-                    <label for="">Nama Jurusan :</label>
-                    <input type="text" name="nama_jurusan">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="">Kouta :</label>
-                    <input type="text" name="kuota">
+                    <label for="">Nama Kebutuhan :</label>
+                    <input type="text" name="nama_kebutuhan">
                 </td>
             </tr>
             <tr>

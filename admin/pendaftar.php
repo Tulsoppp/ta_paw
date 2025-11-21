@@ -9,6 +9,7 @@ $daftar=pendaftar();
         <h2>Calon Siswa</h2>
         <table>
             <tr>
+                <th>Tanggal</th>
                 <th>Nama</th>
                 <th>Jurusan</th>
                 <th>Kebutuhan</th>
@@ -17,17 +18,18 @@ $daftar=pendaftar();
             </tr>
             <?php foreach($daftar as $row): ?>
             <tr>
-                <td><?=$row['NAMA_AKUN_SISWA']?></td>
+                <td><?=$row['TANGGAL_PENDAFTARAN']?></td>
+                <td><?=$row['NAMA_LENGKAP']?></td>
                 <td><?=$row['NAMA_JURUSAN']?></td>
                 <td><?=$row['NAMA_KEBUTUHAN']?></td>
-                <td><?=$row['JENIS_STATUS_SISWA']?></td>
+                <td><?=$row['KET_STATUS']?></td>
                 <td>
-                    <a href="edit_status.php?ID_PENDAFTARAN=<?=$row['ID_PENDAFTAR_SISWA']?>&kondisi=lulus">
+                    <a href="edit_status.php?ID_PENDAFTARAN=<?=$row['ID_PENDAFTARAN']?>&kondisi=lulus">
                         <button name="lulus">
                             Lulus
                         </button>
                     </a>
-                    <a href="edit_status.php?ID_PENDAFTARAN=<?=$row['ID_PENDAFTAR_SISWA']?>&kondisi=gagal">
+                    <a href="edit_status.php?ID_PENDAFTARAN=<?=$row['ID_PENDAFTARAN']?>&kondisi=gagal">
                         <button name="gagal">
                             Tidak Lulus
                         </button>

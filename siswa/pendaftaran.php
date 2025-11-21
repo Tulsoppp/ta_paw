@@ -1,6 +1,6 @@
 <?php 
 session_start();
-if( $_SESSION['login']!=true){
+if(!isset($_SESSION['login'])){
     require_once '../cekLogin.inc';;
 }
 require_once "../database.php";
@@ -180,53 +180,67 @@ $kebutuhan=kebutuhan();
         <hr>
 
         <div class="form_isi">
-            <label for="nama_wali">Nama Wali :</label>
-            <input type="text" id="nama_wali" name="nama_wali" placeholder="nama_lengkap_wali">
+            <label for="nama_wali">Nama Ayah :</label>
+            <input type="text" id="nama_wali" name="nama_ayah" placeholder="nama_lengkap_ayah">
         </div>
 
-        <div class="form_isi">
-            <label>Hubungan Wali :</label>
-            <div class="radio-group-horizontal">
-                <select id="gaji_wali" name="hubungan">
-                    <option value="">-- Pilih Hubungan --</option>
-                    <option value="1">Anak Kandung</option>
-                    <option value="2">Anak Tiri</option>
-                    <option value="3">Anak Angkat</option>
-                </select>
-            </div>
-        </div>
-        
-        <div class="form_isi">
-            <label for="pekerjaan_wali">Pekerjaan Wali :</label>
-            <input type="text" id="pekerjaan_wali" name="pekerjaan_wali" placeholder="pekerjaan_wali">
+        <div>
+            <label for="">Keadaan Ayah :</label>
+            <input type="radio" id="hidup" name="keadaan_ayah" value="Hidup">Masih Hidup
+            <input type="radio" id="meninggal" name="keadaan_ayah" value="Meninggal">Meninggal
         </div>
 
-        <div class="form_isi">
-            <label for="alamat_wali">Alamat Wali :</label>
-            <input type="text" id="alamat_wali" name="alamat_wali" placeholder="alamat_wali">
+        <div>
+            <label for="">Alamat Ayah :</label>
+            <input type="text" id="alamat_ayah" name="alamat_ayah" placeholder="alamat_ayah">
         </div>
-        
-        <div class="form_isi">
-            <label for="hp_wali">No HP Wali :</label>
-            <input type="text" id="hp_wali" name="no_hp_wali" placeholder="no_hp_wali">
+
+        <div>
+            <label for="">No Telepon Ayah : </label>
+            <input type="text" id="no_hp_ayah" name="no_hp_ayah" placeholder="no_hp_ayah">
         </div>
-        
-        <div class="form_isi">
-            <label for="gaji_wali">Gaji Wali :</label>
-            <select id="gaji_wali" name="slip_gaji">
-                <option value="">-- Pilih Nominal --</option>
-                <option value="1">0 Rp - 500.000 Rp</option>
-                <option value="2">500.001 Rp - 1.000.000 Rp</option>
-                <option value="3">1.000.001 Rp - 1.500.000 Rp</option>
-                <option value="4">1.500.001 Rp - 2.000.000 Rp</option>
-                <option value="5">2.000.001 Rp - 2.500.000 Rp</option>
-                <option value="6">2.500.001 Rp - 3.000.000 Rp</option>
-                <option value="7">3.000.001 Rp - 3.500.000 Rp</option>
-                <option value="8">3.500.001 Rp - 4.000.000 Rp</option>
-                <option value="9">4.000.001 Rp - 4.500.000 Rp</option>
-                <option value="10">4.500.001 Rp - 5.000.000 Rp</option>
-            </select>
+
+        <div>
+            <label for="">Pekerjaan Ayah</label>
+            <input type="text" id="pekerjaan_ayah" name="pekerjaan_ayah" placeholder="pekerjaan_ayah">
         </div>
+
+        <div>
+            <label for="">Gaji Ayah : </label>
+            <input type="text" id="gaji_ayah" name="gaji_ayah" placeholder="gaji_ayah">
+        </div>
+
+
+        <div class="form_isi">
+            <label for="nama_wali">Nama Ibu :</label>
+            <input type="text" id="nama_wali" name="keadaan_ibu" placeholder="nama_lengkap_ayah">
+        </div>
+
+        <div>
+            <label for="">Keadaan Ibu :</label>
+            <input type="radio" id="hidup" name="keadaan_ibu" value="Hidup">Masih Hidup
+            <input type="radio" id="meninggal" name="keadaan_ibu" value="Meninggal">Meninggal
+        </div>
+
+        <div>
+            <label for="">Alamat Ibu :</label>
+            <input type="text" id="alamat_ayah" name="alamat_ibu" placeholder="alamat_ayah">
+        </div>
+
+        <div>
+            <label for="">No Telepon Ibu : </label>
+            <input type="text" id="no_hp_ayah" name="no_hp_ibu" placeholder="no_hp_ayah">
+        </div>
+
+        <div>
+            <label for="">Pekerjaan Ibu</label>
+            <input type="text" id="pekerjaan_ayah" name="pekerjaan_ibu" placeholder="pekerjaan_ayah">
+        </div>
+
+        <div>
+            <label for="">Gaji Ibu : </label>
+            <input type="text" id="gaji_ayah" name="gaji_ibu" placeholder="gaji_ayah">
+        </div>        
 
         <div class="form-actions">
             <button type="submit">Kirim Pendaftaran</button>

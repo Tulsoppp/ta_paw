@@ -9,6 +9,7 @@ require_once '../includes/navbarAdmin.php';
 ?>
 <div class="edit_kouta">
     <div>
+        <form method="POST">
         <h2>Edit Kuota</h2>
         <table>
             <tr>
@@ -23,5 +24,6 @@ require_once '../includes/navbarAdmin.php';
                 </td>
             </tr>
         </table>
+        </form>
      </div>
 </div>
