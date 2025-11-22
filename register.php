@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <tr>
                     <td>
                          <label for="">Username</label>
-                        <input type="text" name="nama" placeholder="___________" value="<?php echo htmlspecialchars($nama); ?>"><br>
+                        <input type="text" name="nama" placeholder="Masukkan username" value="<?php echo htmlspecialchars($nama); ?>"><br>
                         <?php if (!empty($errors['nama'])): ?>
                             <span class="error"><?php echo $errors['nama']; ?></span>
                         <?php endif; ?>
@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <tr>
                     <td>
                         <label for="email">Email</label>
-                        <input type="text" name="email" placeholder="___________" value="<?php echo htmlspecialchars($email); ?>"><br>
+                        <input type="text" name="email" placeholder="Masukkan email" value="<?php echo htmlspecialchars($email); ?>"><br>
                         <?php if (!empty($errors['email'])): ?>
                             <span class="error"><?php echo $errors['email']; ?></span>
                         <?php endif; ?>
@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <tr>
                     <td>
                         <label for="pass">Password</label>
-                        <input type="password" name="pass" placeholder="___________" value="<?php echo htmlspecialchars($password); ?>"><br>
+                        <input type="password" name="pass" placeholder="Password terdiri dari 8 karakter" value="<?php echo htmlspecialchars($password); ?>"><br>
                         <?php if (!empty($errors['pass'])): ?>
                             <span class="error"><?php echo $errors['pass']; ?></span>
                         <?php endif; ?>

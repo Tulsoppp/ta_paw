@@ -45,18 +45,32 @@ function val_date_format(&$errors, $field_name, $value, $format, $message) {
     }
 }
 
-
-function val_matches(&$errors, $field_name, $value1, $value2, $message) {
-    if ($value1 !== $value2) {
-        $errors[$field_name] = $message;
-    }
-}
-
 function val_email(&$errors, $field_name, $value, $message) {
     $pattern = "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/";
     if (!empty(trim($value)) && !preg_match($pattern, $value)) {
         $errors[$field_name] = $message;
     }
 }
+
+function val_file(&$errors, $field_name, $file, $allowed_ext, $max_mb, $message)
+{
+    if (!isset($file) || $file['error'] !== 0) {
+        $errors[$field_name] = "File wajib diupload.";
+        return;
+    }
+
+    $ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
+    if (!in_array($ext, $allowed_ext)) {
+        $errors[$field_name] = $message;
+        return;
+    }
+    // Batas ukuran dalam byte
+    $max_bytes = $max_mb * 1024 * 1024;
+
+    if ($file['size'] > $max_bytes) {
+        $errors[$field_name] = "Ukuran file maksimal {$max_mb}MB.";
+    }
+}
+
 
 ?>
