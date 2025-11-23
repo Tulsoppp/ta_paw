@@ -1,5 +1,4 @@
 <?php
-
 function val_required(&$errors, $field_name, $value, $message) {
     if (empty(trim($value))) {
         $errors[$field_name] = $message;
