@@ -208,7 +208,7 @@ $kebutuhan=kebutuhan();
         </div>
 
         <div class="form_isi">
-            <label for="jurusan">Pilihan Jurusan :<<span class="wajib">*</span>/label>
+            <label for="jurusan">Pilihan Jurusan :<span class="wajib">*</span></label>
             <select id="jurusan" name="id_jurusan">
                 <option value="">-- Pilih Jurusan --</option>
                 <?php foreach($jurusan as $data): ?>
