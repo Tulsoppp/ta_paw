@@ -74,7 +74,8 @@ require_once 'includes/navbar.php';
                 </tr>
                 <tr>
                     <td>
-                        <input type="password" id="pass" name="pass" placeholder="Password terdiri dari 8 karakter">
+                        <input type="password" id="pass" name="pass" placeholder="Password terdiri dari 8 karakter"
+                        value="<?php echo htmlspecialchars($password); ?>">
 
                         <?php if (!empty($errors['pass'])): ?>
                             <span class="error"><?php echo $errors['pass']; ?></span>

@@ -8,16 +8,18 @@
     <h1>Daftar Jurusan</h1>
     <table>
         <tr>
+            <th>Kode</th>
             <th>Nama Jurusan</th>
             <th>Kouta</th>
             <th>Aksi</th>
         </tr>
         <?php foreach($jurusan as $data):?>
         <tr>
-            <td><?php echo $data['NAMA_JURUSAN']?></td>
-            <td><?php echo $data['KUOTA_JURUSAN']?></td>
+            <td><?= $data['ID_JURUSAN'] ?></td>
+            <td><?= $data['NAMA_JURUSAN'] ?></td>
+            <td><?= $data['KUOTA_JURUSAN'] ?></td>
             <td>
-                <a href="edit_jurusan.php?ID_JURUSAN=<?=$data['ID_JURUSAN']?>">
+                <a href="edit_jurusan.php?ID_JURUSAN=<?=$data['ID_JURUSAN']?>&KUOTA_JURUSAN=<?=$data['KUOTA_JURUSAN']?>">
                     <button name="edit">
                         Edit
                     </button>

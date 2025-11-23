@@ -17,7 +17,7 @@
             <a href="../siswa/index.php" class="nav-link">Bagian Siswa ▾</a>
             <ul class="dropdown-content">
                 <li><a href="#vimisi">Jurusan</a></li>
-                <li><a href="../siswa/riwayat_pendaftaran.php"><button>Riwayat Pendaftaran</button></a></li>
+                <li><a href="../siswa/riwayat_pendaftaran.php">Riwayat Pendaftaran</a></li>
             </ul>
             </li>
         </ul>

@@ -5,10 +5,10 @@
     $kebutuhan=kebutuhan();
 ?>
 <div class="jurusan">
-    <h1>Daftar Jurusan</h1>
+    <h1>Daftar Kebutuhan</h1>
     <table>
         <tr>
-            <th>No</th>
+            <th>Kode</th>
             <th>Kebutuhan</th>
             <th>Aksi</th>
         </tr>
