@@ -75,7 +75,7 @@ a {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: #fff; 
+  background-color: #fff;
 }
 
 body {
@@ -93,7 +93,7 @@ body {
   left: 0;
 
   background-color: white;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   padding: 0;
   margin: 0;
 
@@ -931,7 +931,6 @@ td {
   box-sizing: border-box;
 }
 
-
 .profile-card {
   background: #ffffff;
   border-radius: 12px;
@@ -1015,4 +1014,7 @@ td {
 .kebutuhan {
   display: flex;
   flex-direction: column;
+}
+.wajib {
+  color: red;
 }

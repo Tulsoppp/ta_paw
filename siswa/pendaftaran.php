@@ -64,11 +64,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     val_alpha($errors, 'tempat_lahir', $tempat_lahir, 'Tempat Lahir harus berupa huruf dan spasi.'); 
 
     val_required($errors, 'alamat_siswa', $alamat_siswa, 'Alamat Siswa wajib diisi.');
-    
-    val_alpha($errors, 'alamat_siswa', $alamat_siswa, 'Alamat harus berupa huruf dan spasi.'); 
+    val_alphanumeric($errors, 'alamat_siswa', $alamat_siswa, 'Alamat harus berupa huruf dan spasi.'); 
 
     val_required($errors, 'id_jurusan', $id_jurusan, 'Jurusan wajib dipilih.');
-    val_numeric($errors, 'id_jurusan', $id_jurusan, 'Jurusan yang dipilih tidak valid.'); 
 
     val_required($errors, 'no_hp_siswa', $no_hp_siswa, 'No HP Siswa wajib diisi.');
     val_numeric($errors, 'no_hp_siswa', $no_hp_siswa, 'No HP Siswa harus berupa angka.');
@@ -78,22 +76,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     val_required($errors, 'kebutuhan', $kebutuhan, 'kebutuhan wajib diisi.');
 
     val_required($errors, 'kebutuhan', $kebutuhan, 'Kebutuhan wajib dipilih.');
-    val_alpha($errors, 'kebutuhan', $kebutuhan, 'Kebutuhan harus berupa huruf dan spasi.'); 
 
     val_required($errors, 'nama_ayah', $nama_ayah, 'Nama Ayah wajib diisi.');
     val_alpha($errors, 'nama_ayah', $nama_ayah, 'Nama Ayah harus berupa huruf dan spasi.'); 
 
     val_required($errors, 'keadaan_ayah', $keadaan_ayah, 'Keadaan Ayah wajib dipilih.');
-    val_alpha($errors, 'keadaan_ayah', $keadaan_ayah, 'Keadaan Ayah harus berupa huruf dan spasi.'); 
 
     val_required($errors, 'alamat_ayah', $alamat_ayah, 'Alamat Ayah wajib diisi.');
-    val_alpha($errors, 'alamat_ayah', $alamat_ayah, 'Alamat Ayah harus berupa huruf dan spasi.'); 
+    val_alphanumeric($errors, 'alamat_ayah', $alamat_ayah, 'Alamat Ayah harus berupa huruf dan spasi.'); 
 
     val_required($errors, 'no_hp_ayah', $no_hp_ayah, 'No HP Ayah wajib diisi.');
     val_numeric($errors, 'no_hp_ayah', $no_hp_ayah, 'No HP Ayah harus berupa angka.');
 
     val_required($errors, 'pekerjaan_ayah', $pekerjaan_ayah, 'Pekerjaan Ayah wajib diisi.');
-    val_alpha($errors, 'pekerjaan_ayah', $pekerjaan_ayah, 'Pekerjaan Ayah harus berupa huruf dan spasi.'); 
+    val_alpha($errors, 'pekerjaan_ayah', $pekerjaan_ayah, 'Pekerjaan Ayah harus berupa huruf dan spasi.');
 
     val_required($errors, 'gaji_ayah', $gaji_ayah, 'Gaji Ayah wajib dipilih.');
 
@@ -101,16 +97,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     val_alpha($errors, 'nama_ibu', $nama_ibu, 'Nama Ibu harus berupa huruf dan spasi.'); 
 
     val_required($errors, 'keadaan_ibu', $keadaan_ibu, 'Keadaan Ibu wajib dipilih.');
-    val_alpha($errors, 'keadaan_ibu', $keadaan_ibu, 'Keadaan Ibu harus berupa huruf dan spasi.'); 
 
     val_required($errors, 'alamat_ibu', $alamat_ibu, 'Alamat Ibu wajib diisi.');
-    val_alpha($errors, 'alamat_ibu', $alamat_ibu, 'Alamat Ibu harus berupa huruf dan spasi.'); 
+    val_alphanumeric($errors, 'alamat_ibu', $alamat_ibu, 'Alamat Ibu harus berupa huruf dan spasi.'); 
 
     val_required($errors, 'no_hp_ibu', $no_hp_ibu, 'No HP Ibu wajib diisi.');
     val_numeric($errors, 'no_hp_ibu', $no_hp_ibu, 'No HP Ibu harus berupa angka.');
 
     val_required($errors, 'pekerjaan_ibu', $pekerjaan_ibu, 'Pekerjaan Ibu wajib diisi.');
-    val_alpha($errors, 'pekerjaan_ibu', $pekerjaan_ibu, 'Pekerjaan Ibu harus berupa huruf dan spasi.'); 
+
     val_required($errors, 'gaji_ibu', $gaji_ibu, 'Gaji Ibu wajib dipilih.');
 
     val_file($errors,'kk',$_FILES['kk'],['jpg', 'jpeg', 'png', 'pdf'],2,'Format file tidak didukung.');
@@ -143,7 +138,7 @@ $kebutuhan=kebutuhan();
         </div>
 
         <div class="form_isi">
-            <label for="nisn">NISN :</label>
+            <label for="nisn">NISN : <span class="wajib">*</span></label>
             <input type="text" id="nisn" name="nisn" placeholder="NISN">
             <?php if(!empty($errors['nisn'])): ?>
             <span class="error"><?= $errors['nisn'] ?></span>
@@ -151,7 +146,7 @@ $kebutuhan=kebutuhan();
         </div>
 
         <div class="form_isi">
-            <label for="nama_lengkap">Nama Lengkap :</label>
+            <label for="nama_lengkap">Nama Lengkap : <span class="wajib">*</span></label>
             <input type="text" id="nama_lengkap" name="nama_siswa" placeholder="Nama Lengkap">
             <?php if(!empty($errors['nama_siswa'])): ?>
             <span class="error"><?= $errors['nama_siswa'] ?></span>
@@ -159,7 +154,7 @@ $kebutuhan=kebutuhan();
         </div>
 
         <div class="form_isi">
-            <label>Jenis Kelamin :</label>
+            <label>Jenis Kelamin : <span class="wajib">*</span></label>
             <div class="radio-group-horizontal">
                 <input type="radio" id="laki-laki" name="jenis_kelamin" value="Laki-Laki">
                 <label for="laki-laki">Laki-laki</label>
@@ -173,7 +168,7 @@ $kebutuhan=kebutuhan();
         </div>
 
         <div class="form_isi">
-            <label>Agama :</label>
+            <label>Agama : <span class="wajib">*</span></label>
             <input type="text" id="agama" name="agama" placeholder="Agama">
             <?php if(!empty($errors['agama'])): ?>
             <span class="error"><?= $errors['agama'] ?></span>
@@ -181,7 +176,7 @@ $kebutuhan=kebutuhan();
         </div>
         
         <div class="form_isi">
-            <label for="tempat_lahir">Tempat Lahir :</label>
+            <label for="tempat_lahir">Tempat Lahir : <span class="wajib">*</span></label>
             <input type="text" id="tempat_lahir" name="tempat_lahir" placeholder="Tempat Lahir">
             <?php if(!empty($errors['tempat_lahir'])): ?>
             <span class="error"><?= $errors['tempat_lahir'] ?></span>
@@ -189,7 +184,7 @@ $kebutuhan=kebutuhan();
         </div>
         
         <div class="form_isi">
-            <label for="tgl_lahir">Tanggal Lahir :</label>
+            <label for="tgl_lahir">Tanggal Lahir : <span class="wajib">*</span></label>
             <input type="text" id="tgl_lahir" name="tanggal_lahir" placeholder="Tahun-Bulan-Hari">
             <?php if(!empty($errors['tanggal_lahir'])): ?>
             <span class="error"><?= $errors['tanggal_lahir'] ?></span>
@@ -197,7 +192,7 @@ $kebutuhan=kebutuhan();
         </div>
         
         <div class="form_isi">
-            <label for="alamat_siswa">Alamat Siswa :</label>
+            <label for="alamat_siswa">Alamat Siswa : <span class="wajib">*</span></label>
             <input type="text" id="alamat_siswa" name="alamat_siswa" placeholder="Alamat Siswa">
             <?php if(!empty($errors['alamat_siswa'])): ?>
             <span class="error"><?= $errors['alamat_siswa'] ?></span>
@@ -205,7 +200,7 @@ $kebutuhan=kebutuhan();
         </div>
         
         <div class="form_isi">
-            <label for="hp_siswa">No HP Siswa :</label>
+            <label for="hp_siswa">No HP Siswa : <span class="wajib">*</span></label>
             <input type="text" id="hp_siswa" name="no_hp_siswa" placeholder="No Hp Siswa">
             <?php if(!empty($errors['no_hp_siswa'])): ?>
             <span class="error"><?= $errors['no_hp_siswa'] ?></span>
@@ -213,7 +208,7 @@ $kebutuhan=kebutuhan();
         </div>
 
         <div class="form_isi">
-            <label for="jurusan">Pilihan Jurusan :</label>
+            <label for="jurusan">Pilihan Jurusan :<<span class="wajib">*</span>/label>
             <select id="jurusan" name="id_jurusan">
                 <option value="">-- Pilih Jurusan --</option>
                 <?php foreach($jurusan as $data): ?>
@@ -228,7 +223,7 @@ $kebutuhan=kebutuhan();
         <h2>Kebutuhan Khusus</h2>
         <hr>
         <div class="form_isi">
-             <label for="kebutuhan">Masukan Jika Siswa Memiliki Kebutuhan Khusus :</label>
+             <label for="kebutuhan">Masukan Jika Siswa Memiliki Kebutuhan Khusus : <span class="wajib">*</span></label>
             <div class="kebutuhan">
                 <?php foreach($kebutuhan as $kbth): ?>
                     <div>
@@ -244,7 +239,7 @@ $kebutuhan=kebutuhan();
         <hr>
         
         <div class="form_isi">
-            <label for="kk" >Kartu Keluarga :</label>
+            <label for="kk" >Kartu Keluarga : <span class="wajib">*</span></label>
             <input type="file" 
                 id="pas_foto" 
                 name="kk" 
@@ -255,7 +250,7 @@ $kebutuhan=kebutuhan();
         </div>
 
         <div class="form_isi">
-            <label for="akta">Akte Kelahiran :</label>
+            <label for="akta">Akte Kelahiran : <span class="wajib">*</span></label>
             <input type="file" 
                 id="pas_foto" 
                 name="akte" 
@@ -266,7 +261,7 @@ $kebutuhan=kebutuhan();
         </div>
 
         <div class="form_isi">
-            <label for="ijazah">Ijazah / SKL (Surat keterangan Lulus) :</label>
+            <label for="ijazah">Ijazah / SKL (Surat keterangan Lulus) : <span class="wajib">*</span></label>
             <input type="file" 
                 id="pas_foto" 
                 name="ijazah" 
@@ -277,7 +272,7 @@ $kebutuhan=kebutuhan();
         </div>
         
         <div class="form_isi">
-            <label for="pas_foto">Foto Pas Siswa (Upload) : (Max ukuran file 5 mb jpg,png,tiff.)</label>
+            <label for="pas_foto">Foto Pas Siswa (Upload) : (Max ukuran file 5 mb jpg,png,tiff.) <span class="wajib">*</span></label>
             <input type="file" 
                 id="pas_foto" 
                 name="foto" 
@@ -290,7 +285,7 @@ $kebutuhan=kebutuhan();
         <h2>Data Ayah & Ibu</h2>
         <hr>
         <div class="form_isi">
-            <label for="nama_wali">Nama Ayah :</label>
+            <label for="nama_wali">Nama Ayah : <span class="wajib">*</span></label>
             <input type="text" id="nama_wali" name="nama_ayah" placeholder="Nama Lengkap Ayah">
             <?php if(!empty($errors['nama_ayah'])): ?>
             <span class="error"><?= $errors['nama_ayah'] ?></span>
@@ -298,7 +293,7 @@ $kebutuhan=kebutuhan();
         </div>
 
         <div class="form_isi">
-                <label for="">Keadaan Ayah :</label>
+                <label for="">Keadaan Ayah : <span class="wajib">*</span></label>
                 <div class="radio-group-horizontal">
                     <input type="radio" id="masih_hidup" name="keadaan_ayah" value="masih hidup">
                     <label for="masih hidup">Masih Hidup</label>
@@ -308,19 +303,11 @@ $kebutuhan=kebutuhan();
                     <?php if(!empty($errors['keadaan'])): ?>
             <span class="error"><?= $errors['keadaan'] ?></span>
             <?php endif; ?>
-                    <input type="radio" id="masih_hidup" name="keadan_ayah" value="masih hidup">
-                    <label for="masih hidup">Masih Hidup</label>
-                    
-                    <input type="radio" id="sudah_tidak_ada" name="keadan_ayah" value="sta">
-                    <label for="sta">Sudah Tidak Ada</label>
-                    <?php if(!empty($errors['keadan_ayah'])): ?>
-            <span class="error"><?= $errors['keadan_ayah'] ?></span>
-            <?php endif; ?>
                 </div>
         </div>
 
         <div class="form_isi">
-            <label for="">Alamat Ayah :</label>
+            <label for="">Alamat Ayah : <span class="wajib">*</span></label>
             <input type="text" id="alamat_ayah" name="alamat_ayah" placeholder="Alamat Ayah">
             <?php if(!empty($errors['alamat_ayah'])): ?>
             <span class="error"><?= $errors['alamat_ayah'] ?></span>
@@ -328,7 +315,7 @@ $kebutuhan=kebutuhan();
         </div>
 
         <div class="form_isi">
-            <label for="">No Telepon Ayah : </label>
+            <label for="">No Telepon Ayah : <span class="wajib">*</span></label>
             <input type="text" id="no_hp_ayah" name="no_hp_ayah" placeholder="No Hp Ayah">
             <?php if(!empty($errors['no_hp_ayah'])): ?>
             <span class="error"><?= $errors['no_hp_ayah'] ?></span>
@@ -336,7 +323,7 @@ $kebutuhan=kebutuhan();
         </div>
 
         <div class="form_isi">
-            <label for="">Pekerjaan Ayah</label>
+            <label for="">Pekerjaan Ayah <span class="wajib">*</span></label>
             <input type="text" id="pekerjaan_ayah" name="pekerjaan_ayah" placeholder="Pekerjaan Ayah">
             <?php if(!empty($errors['pekerjaan_ayah'])): ?>
             <span class="error"><?= $errors['pekerjaan_ayah'] ?></span>
@@ -344,8 +331,24 @@ $kebutuhan=kebutuhan();
         </div>
 
         <div class="form_isi">
-            <label for="">Gaji Ayah : </label>
-            <input type="text" id="gaji_ayah" name="gaji_ayah" placeholder="Gaji Ayah">
+            <label for="">Gaji Ayah : <span class="wajib">*</span></label>
+            <select name="gaji" id="gaji_ayah">
+                <option value="0">-- Pilih Gaji Ayah --</option>
+                <option value="1">-- Kurang Dari Rp 500.000 --</option>
+                <option value="2">-- Rp 500.001 Sampai Rp 1.000.000 --</option>
+                <option value="3">-- Rp 1.000.001 Sampai Rp 1.500.000 --</option>
+                <option value="4">-- Rp 1.500.001 Sampai Rp 2.000.000 --</option>
+                <option value="5">-- Rp 2.000.001 Sampai Rp 2.500.000 --</option>
+                <option value="6">-- Rp 2.500.001 Sampai Rp 3.000.000 --</option>
+                <option value="6">-- Rp 3.000.001 Sampai Rp 3.500.000 --</option>
+                <option value="6">-- Rp 3.500.001 Sampai Rp 4.000.000 --</option>
+                <option value="6">-- Rp 4.000.001 Sampai Rp 4.500.000 --</option>
+                <option value="6">-- Rp 4.500.001 Sampai Rp 5.000.000 --</option>
+                <option value="6">-- Rp 5.000.001 Sampai Rp 5.500.000 --</option>
+                <option value="6">-- Rp 5.500.001 Sampai Rp 6.000.000 --</option>
+                <option value="6">-- Rp 6.000.001 Sampai Rp 6.500.000 --</option>
+                <option value="6">-- Rp 6.500.001 Sampai Rp 7.000.000 --</option>
+            </select>
             <?php if(!empty($errors['gaji_ayah'])): ?>
             <span class="error"><?= $errors['gaji_ayah'] ?></span>
             <?php endif; ?>
@@ -353,7 +356,7 @@ $kebutuhan=kebutuhan();
 
 
         <div class="form_isi">
-            <label for="nama_wali">Nama Ibu :</label>
+            <label for="nama_wali">Nama Ibu : <span class="wajib">*</span></label>
             <input type="text" id="nama_ibu" name="nama_ibu" placeholder="Nama Lengkap Ibu">
             <?php if(!empty($errors['nama_ibu'])): ?>
             <span class="error"><?= $errors['nama_ibu'] ?></span>
@@ -361,7 +364,7 @@ $kebutuhan=kebutuhan();
         </div>
 
         <div class="form_isi">
-            <label for="">Keadaan Ibu :</label>
+            <label for="">Keadaan Ibu : <span class="wajib">*</span></label>
                 <div class="radio-group-horizontal">
                     <input type="radio" id="masih_hidup" name="kedaan_ibu" value="masih hidup">
                     <label for="masih hidup">Masih Hidup</label>
@@ -370,16 +373,11 @@ $kebutuhan=kebutuhan();
                     <?php if(!empty($errors['keadaan_ibu'])): ?>
             <span class="error"><?= $errors['keadaan_ibu'] ?></span>
             <?php endif; ?>
-                    <input type="radio" id="sudah_tidak_ada" name="kedaan_ibu" value="sta">
-                    <label for="sta">Sudah Tidak Ada</label>
-                    <?php if(!empty($errors['kedaan_ibu'])): ?>
-            <span class="error"><?= $errors['kedaan_ibu'] ?></span>
-            <?php endif; ?>
                 </div>
         </div>
 
         <div class="form_isi">
-            <label for="">Alamat Ibu :</label>
+            <label for="">Alamat Ibu : <span class="wajib">*</span></label>
             <input type="text" id="alamat_ibu" name="alamat_ibu" placeholder="Alamat Ibu">
             <?php if(!empty($errors['alamat_ibu'])): ?>
             <span class="error"><?= $errors['alamat_ibu'] ?></span>
@@ -387,7 +385,7 @@ $kebutuhan=kebutuhan();
         </div>
 
         <div class="form_isi">
-            <label for="">No Telepon Ibu : </label>
+            <label for="">No Telepon Ibu : <span class="wajib">*</span></label>
             <input type="text" id="no_hp_ibu" name="no_hp_ibu" placeholder="No Hp Ibu">
             <?php if(!empty($errors['no_hp_ibu'])): ?>
             <span class="error"><?= $errors['no_hp_ibu'] ?></span>
@@ -395,7 +393,7 @@ $kebutuhan=kebutuhan();
         </div>
 
         <div class="form_isi">
-            <label for="">Pekerjaan Ibu</label>
+            <label for="">Pekerjaan Ibu <span class="wajib">*</span></label>
             <input type="text" id="pekerjaan_ibu" name="pekerjaan_ibu" placeholder="Pekerjaan Ibu">
             <?php if(!empty($errors['pekerjaan_ibu'])): ?>
             <span class="error"><?= $errors['pekerjaan_ibu'] ?></span>
@@ -403,8 +401,24 @@ $kebutuhan=kebutuhan();
         </div>
 
         <div class="form_isi">
-            <label for="">Gaji Ibu : </label>
-            <input type="text" id="gaji_ibu" name="gaji_ibu" placeholder="Gaji Ibu">
+            <label for="">Gaji Ibu : <span class="wajib">*</span> </label>
+            <select name="gaji" id="gaji_ibu">
+                <option value="0">-- Pilih Gaji Ibu --</option>
+                <option value="1">-- Kurang Dari Rp 500.000 --</option>
+                <option value="2">-- Rp 500.001 Sampai Rp 1.000.000 --</option>
+                <option value="3">-- Rp 1.000.001 Sampai Rp 1.500.000 --</option>
+                <option value="4">-- Rp 1.500.001 Sampai Rp 2.000.000 --</option>
+                <option value="5">-- Rp 2.000.001 Sampai Rp 2.500.000 --</option>
+                <option value="6">-- Rp 2.500.001 Sampai Rp 3.000.000 --</option>
+                <option value="6">-- Rp 3.000.001 Sampai Rp 3.500.000 --</option>
+                <option value="6">-- Rp 3.500.001 Sampai Rp 4.000.000 --</option>
+                <option value="6">-- Rp 4.000.001 Sampai Rp 4.500.000 --</option>
+                <option value="6">-- Rp 4.500.001 Sampai Rp 5.000.000 --</option>
+                <option value="6">-- Rp 5.000.001 Sampai Rp 5.500.000 --</option>
+                <option value="6">-- Rp 5.500.001 Sampai Rp 6.000.000 --</option>
+                <option value="6">-- Rp 6.000.001 Sampai Rp 6.500.000 --</option>
+                <option value="6">-- Rp 6.500.001 Sampai Rp 7.000.000 --</option>
+            </select>
             <?php if(!empty($errors['gaji_ibu'])): ?>
             <span class="error"><?= $errors['gaji_ibu'] ?></span>
             <?php endif; ?>

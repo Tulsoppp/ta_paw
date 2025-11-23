@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty($errors)) {
         register($_POST);
-        Location: login.php;
+        header("Location: login.php");
     }
 }
 
