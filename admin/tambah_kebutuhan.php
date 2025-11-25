@@ -1,4 +1,6 @@
+<!-- halaman untuk menambah kebutuhan baru -->
 <?php
+
     require_once "../database.php";
     require_once "../validasi.php";
     require_once "../includes/header.php";
@@ -6,10 +8,13 @@
 
     $errors=[];
     if($_SERVER["REQUEST_METHOD"]=="POST"){
+        // validasi kode kebutuhan
         val_required($errors,"kode_k",$_POST["kode_kebutuhan"],"Kode kebutuhan wajib diisi.");
         val_numeric($errors,"kode_k",$_POST["kode_kebutuhan"],"Kode kebutuhan harus berupa angka.");
+        // validasi nama kebutuhan
         val_required($errors,"nama_k",$_POST["nama_kebutuhan"],"Nama kebutuhan wajib diisi.");
         val_alphanumeric($errors,"nama_k",$_POST["nama_kebutuhan"],"Nama kebutuhan harus berupa huruf dan angka.");
+        // jika tidak ada error, masukkan data ke database
         if(empty($errors)){
             $stmnt=$pdo->prepare("INSERT INTO kebutuhan VALUES (:KODE_KEBUTUHAN,:NAMA_KEBUTUHAN)");
             $stmnt->execute([

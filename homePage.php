@@ -1,3 +1,4 @@
+<!-- halaman home page siswa yang menampilkan penjelasan singkat tentang sekolah -->
 <div class="dashboard" id="isi">
 	<h1>SMA Bhakti Wiyata</h1>
 	<div class="isi">

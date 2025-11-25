@@ -1,3 +1,4 @@
+<!-- halaman untuk menampilkan siswa yang ditolak -->
 <?php
 require_once '../includes/header.php';
 require_once '../includes/navbarAdmin.php';

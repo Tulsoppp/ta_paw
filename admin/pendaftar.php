@@ -1,3 +1,4 @@
+<!-- halaman untuk menampilkan pendaftar -->
 <?php
 require_once '../includes/header.php';
 require_once '../includes/navbarAdmin.php';

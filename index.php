@@ -1,4 +1,6 @@
+
 <?php
+//halaman utama ketika user mengakses website
 session_start();
 ?>
 <div class="top-sticky">

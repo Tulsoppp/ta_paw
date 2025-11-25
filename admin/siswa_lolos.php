@@ -1,3 +1,4 @@
+<!-- halaman untuk menampilkan siswa yang diterima -->
 <?php
 require_once '../includes/header.php';
 require_once '../includes/navbarAdmin.php';

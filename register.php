@@ -1,4 +1,5 @@
 <?php
+// halaman untuk registrasi user baru
     require_once 'database.php';
     require_once 'includes/header.php';
     require_once 'includes/navbar.php';
@@ -17,16 +18,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['pass'];
     $email = $_POST['email'];
 
+    // validasi nama
     val_required($errors, 'nama', $nama, 'Nama wajib diisi.');
     val_alpha($errors, 'nama', $nama, 'Nama harus berupa huruf dan spasi.');
 
+    // validasi password
     val_required($errors, 'pass', $password, 'Password wajib diisi.');
     val_password_format($errors, 'pass', $password, 8, 'Password minimal 8 karakter.'); 
 
+    // validasi email
     val_required($errors, 'email', $email, 'Email wajib diisi.');
     val_email($errors, 'email', $email, 'Format email salah.'); 
 
-
+    // jika tidak ada error, daftarkan user
     if (empty($errors)) {
         register($_POST);
         header("Location: login.php");

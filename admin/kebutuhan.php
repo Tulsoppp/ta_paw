@@ -1,3 +1,4 @@
+<!-- halaman untuk menampilkan daftar kebutuhan -->
 <?php
     require_once '../database.php';
     require_once '../includes/header.php';
