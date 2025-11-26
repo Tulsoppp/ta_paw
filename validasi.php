@@ -1,5 +1,6 @@
 <?php
-//validasi pengecekan kosong atau tidaknya inputan user
+
+// function untuk check tiap inputan agar tidak kosong
 function val_required(&$errors, $field_name, $value, $message) {
     if (empty(trim($value))) {
         $errors[$field_name] = $message;
@@ -45,6 +46,7 @@ function val_date_format(&$errors, $field_name, $value, $format, $message) {
     }
 }
 //validasi email
+
 function val_email(&$errors, $field_name, $value, $message) {
     $pattern = "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/";
     if (!empty(trim($value)) && !preg_match($pattern, $value)) {
