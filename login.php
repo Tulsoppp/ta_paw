@@ -49,7 +49,7 @@ require_once 'includes/navbar.php';
                     <td>
                         <input type="text" id="user" name="user" placeholder="Masukkan username" 
                         value="<?php echo htmlspecialchars($nama); ?>">
-                        <span class="error"><?= $errors['user'] ?? ""; ?></span>
+                        <span class="error_login"><?= $errors['user'] ?? ""; ?></span>
                     </td>
                 </tr>
 
@@ -60,8 +60,8 @@ require_once 'includes/navbar.php';
                     <td>
                         <input type="password" id="pass" name="pass" placeholder="Password terdiri dari 8 karakter"
                         value="<?php echo htmlspecialchars($password); ?>">
-                        <span class="error"><?= $errors['pass'] ?? ""; ?></span>
-                        <span class="error"><?= $errors['salah'] ?? ""; ?></span>
+                        <span class="error_login"><?= $errors['pass'] ?? ""; ?></span>
+                        <span class="error_login"><?= $errors['salah'] ?? ""; ?></span>
                     </td>
                 </tr>
 

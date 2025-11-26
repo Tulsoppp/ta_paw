@@ -23,9 +23,12 @@ $success = "";
 
 // Ambil data siswa saat ini
 try {
-    $stmt = $pdo->prepare("SELECT * FROM siswa WHERE ID_SISWA = :id LIMIT 1");
+    // Ambil data tanpa perlu kolom FOTO, hanya untuk ditampilkan
+    $stmt = $pdo->prepare("SELECT ID_SISWA, USERNAME_SISWA, EMAIL FROM siswa WHERE ID_SISWA = :id LIMIT 1");
     $stmt->execute([':id' => $idSiswa]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    $currentFoto = ""; 
+    
 } catch (PDOException $e) {
     echo "<p>Terjadi kesalahan saat mengambil data siswa: " . htmlspecialchars($e->getMessage()) . "</p>";
     exit();
@@ -39,7 +42,6 @@ if (!$user) {
 // Nilai awal untuk form
 $currentUsername = $user['USERNAME_SISWA'] ?? "";
 $currentEmail    = $user['EMAIL'] ?? "";
-$currentFoto     = $user['FOTO'] ?? "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username'] ?? '');
@@ -66,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    // Upload foto (opsional)
+    // Upload foto (Hanya ke folder, TIDAK KE DATABASE)
     $newFotoName = null;
     if (isset($_FILES['foto']) && $_FILES['foto']['error'] === UPLOAD_ERR_OK) {
         $tmpName = $_FILES['foto']['tmp_name'];
@@ -82,22 +84,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (!in_array($ext, $allowed)) {
                 $errors['foto'] = "Format foto harus jpg, jpeg, png, atau gif.";
             } else {
-                // Buat nama file baru
-                $newFotoName = "siswa_" . $idSiswa . "_" . time() . "." . $ext;
+                $newFotoName = "siswa_" . $idSiswa . "." . $ext; // Nama file tidak pakai time() agar selalu menimpa file lama
                 $dest = __DIR__ . "/uploads/" . $newFotoName;
 
                 if (!is_dir(__DIR__ . "/uploads")) {
                     mkdir(__DIR__ . "/uploads", 0777, true);
                 }
-
+                
+                // Pindahkan file
                 if (!move_uploaded_file($tmpName, $dest)) {
-                    $errors['foto'] = "Gagal mengupload foto.";
+                    $errors['foto'] = "Gagal mengupload foto. Periksa izin folder 'uploads'.";
                 }
             }
         }
     }
-
-    // Jika tidak ada error, update database
+    
+    // Jika tidak ada error, update database (HANYA data selain foto)
     if (empty($errors)) {
         $fields = [
             'USERNAME_SISWA' => $username,
@@ -106,10 +108,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($pass !== '' && $pass === $pass2) {
             $fields['PASSWORD_SISWA'] = md5($pass); // samakan dengan register/login
-        }
-
-        if ($newFotoName !== null) {
-            $fields['FOTO'] = $newFotoName;
         }
 
         // Susun query UPDATE dinamis
@@ -126,44 +124,50 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         try {
             $stmt = $pdo->prepare($sql);
             $stmt->execute($params);
-
-            // Hapus foto lama jika ada foto baru
-            if ($newFotoName !== null && !empty($currentFoto)) {
-                $oldPath = __DIR__ . "/uploads/" . $currentFoto;
-                if (is_file($oldPath)) {
-                    @unlink($oldPath);
-                }
-                $currentFoto = $newFotoName;
-            }
-
+            
             // Update nilai yang ditampilkan
             $currentUsername = $username;
             $currentEmail    = $email;
 
             $success = "Profil berhasil diperbarui.";
+            
+            // Tambahkan pesan sukses untuk foto jika upload berhasil
+            if ($newFotoName !== null && empty($errors['foto'])) {
+                $success .= " Foto profil berhasil diperbarui di folder uploads.";
+            }
+
         } catch (PDOException $e) {
+            // Error ini sekarang hanya muncul jika ada masalah di kolom selain FOTO
             $errors['global'] = "Gagal memperbarui profil: " . htmlspecialchars($e->getMessage());
         }
     }
 }
 ?>
-<div class="profile-card"><!-- pakai card penuh layar putih yang sudah kamu buat -->
-    <div class="avatar-wrap">
-        <?php if ($currentFoto && file_exists(__DIR__ . "/uploads/" . $currentFoto)): ?>
-            <img src="uploads/<?php echo htmlspecialchars($currentFoto); ?>" class="avatar" alt="Foto Profil">
+<div class="edit_profil"><div class="avatar_wrap">
+        <?php 
+        // Cari file foto di folder uploads menggunakan ID siswa dan ekstensi yang umum
+        $foundFoto = false;
+        $extensions = ['jpg', 'jpeg', 'png', 'gif'];
+        $displayFotoName = null;
+
+        foreach ($extensions as $ext) {
+            $testName = "siswa_" . $idSiswa . "." . $ext;
+            if (file_exists(__DIR__ . "/uploads/" . $testName)) {
+                $displayFotoName = $testName;
+                $foundFoto = true;
+                break;
+            }
+        }
+        
+        if ($foundFoto): ?>
+            <img src="uploads/<?php echo htmlspecialchars($displayFotoName); ?>" class="avatar" alt="Foto Profil">
         <?php else: ?>
-            <div class="avatar-placeholder">
+            <div class="avatar_placeholder">
                 <?php echo strtoupper(substr($currentUsername, 0, 1)); ?>
             </div>
         <?php endif; ?>
     </div>
     <h2 style="margin-bottom: 10px;">Edit Profil</h2>
-            <!-- Foto profil -->
-    <div class="profile-label">Foto Profil</div>
-    <input type="file" name="foto" style="margin:8px auto 16px auto;">
-    <?php if (!empty($errors['foto'])): ?>
-        <span class="error"><?php echo $errors['foto']; ?></span>
-    <?php endif; ?>
 
     <?php if (!empty($success)): ?>
         <div class="sukses" style="margin-bottom:10px;"><?php echo $success; ?></div>
@@ -174,45 +178,48 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php endif; ?>
 
     <form method="post" enctype="multipart/form-data" style="width:100%;display:flex;flex-direction:column;align-items:center;">
+        
+        <div class="ep_s">Foto Profil</div>
+        <input type="file" name="foto" style="margin:8px auto 16px auto;">
+        <?php if (!empty($errors['foto'])): ?>
+            <span class="error"><?php echo $errors['foto']; ?></span>
+        <?php endif; ?>
 
-        <!-- Username -->
-        <div class="profile-label">Username</div>
+        <div class="ep_s">Username</div>
         <input
             type="text"
             name="username"
-            class="profile-field"
+            class="ep_input"
             value="<?php echo htmlspecialchars($currentUsername); ?>"
         >
         <?php if (!empty($errors['username'])): ?>
             <span class="error"><?php echo $errors['username']; ?></span>
         <?php endif; ?>
 
-        <!-- Email -->
-        <div class="profile-label">Email</div>
+        <div class="ep_s">Email</div>
         <input
             type="text"
             name="email"
-            class="profile-field"
+            class="ep_input"
             value="<?php echo htmlspecialchars($currentEmail); ?>"
         >
         <?php if (!empty($errors['email'])): ?>
             <span class="error"><?php echo $errors['email']; ?></span>
         <?php endif; ?>
 
-        <!-- Password baru (opsional) -->
-        <div class="profile-label">Password Baru </div>
+        <div class="ep_s">Password Baru </div>
         <input
             type="password"
             name="password"
-            class="profile-field"
+            class="ep_input"
             placeholder="Kosongkan jika tidak ingin mengganti password"
         >
 
-        <div class="profile-label">Konfirmasi Password Baru</div>
+        <div class="ep_s">Konfirmasi Password Baru</div>
         <input
             type="password"
             name="password_confirm"
-            class="profile-field"
+            class="ep_input"
             placeholder="Ulangi password baru"
         >
         <?php if (!empty($errors['password'])): ?>
@@ -225,6 +232,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </form>
 </div>
-
-</body>
-</html>

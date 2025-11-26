@@ -16,7 +16,7 @@ a {
 a {
   color: #000;
 }
-.btn_a{
+.btn_a {
   display: inline-block;
   padding: 7px 15px;
   border-radius: 15px;
@@ -29,11 +29,11 @@ a {
 .btn_a:hover {
   background-color: #83b3ea;
 }
-.btn_a.hapus{
+.btn_a.hapus {
   background-color: #f44336;
   color: white;
 }
-.btn_a.hapus:hover{
+.btn_a.hapus:hover {
   background-color: #ff6565;
 }
 /* header */
@@ -962,76 +962,148 @@ footer li {
   --header-navbar-height: 100px;
 }
 
-.profile-wrapper {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  height: calc(100vh - var(--header-navbar-height)) !important;
-  padding: 0 !important;
-  box-sizing: border-box;
+/* Profil Siswa */
+.halaman_siswa {
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
 }
 
-.profile-card {
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  width: 320px;
-  padding: 30px 20px;
-  text-align: center;
-  margin: 0 auto;
-}
-
-/* Foto bulat di tengah */
-.avatar-wrap {
+.profil_siswa {
   display: flex;
   justify-content: center;
-  margin-bottom: 16px;
+  align-items: flex-start;
+  padding: 20px;
+  min-height: calc(100vh - 60px);
+}
+
+.p_s {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 100%;
+  max-width: 450px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.avatar-wrap {
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
 }
 
 .avatar {
-  width: 110px;
-  height: 110px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
+  border: 4px solid #007bff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.avatar-placeholder {
-  width: 110px;
-  height: 110px;
+.avatar_placeholder {
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  background: #ddd;
-  color: #444;
+  background-color: #007bff;
+  color: #fff;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: center;
   font-size: 48px;
-  font-weight: 600;
+  font-weight: bold;
+  border: 4px solid #007bff;
 }
 
-/* Text di bawah foto */
-.profile-name {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 4px;
-}
-
-.profile-email {
+.ps_label {
+  text-align: left;
+  color: #6c757d;
   font-size: 14px;
-  color: #555;
-  margin-bottom: 6px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: 500;
+  border-bottom: 1px dashed #dee2e6;
+  padding-bottom: 3px;
 }
 
-.profile-password {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 18px;
+.ps_h {
+  text-align: left;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  padding: 8px 0;
 }
 
-/* Tombol */
 .profile-actions {
+  margin-top: 30px;
   display: flex;
+  gap: 15px;
   justify-content: center;
-  gap: 10px;
+}
+
+.btn-link {
+  display: block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  flex-grow: 1;
+  max-width: 200px;
+  text-align: center;
+}
+
+.edit_btn {
+  background-color: #007bff;
+  color: #fff;
+  border: 2px solid #007bff;
+}
+
+.edit_btn:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+  border: 2px solid #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  border-color: #c82333;
+}
+
+@media (max-width: 600px) {
+  .p_s {
+    margin-top: 0;
+    padding: 20px;
+  }
+
+  .avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .avatar_placeholder {
+    width: 100px;
+    height: 100px;
+    font-size: 40px;
+  }
+
+  .profile-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-link {
+    width: 100%;
+    max-width: none;
+  }
 }
 
 .btn-link {
@@ -1057,6 +1129,278 @@ footer li {
 }
 .wajib {
   color: red;
+}
+
+/* Riwayat Pendaftran */
+.riwayat_pendaftaran {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 90%;
+  max-width: 700px;
+  margin: 30px auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.riwayat_pendaftaran h2 {
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.riwayat_pendaftaran h3 {
+  color: #333;
+  font-size: 1.2em;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ddd;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.rp_label {
+  color: #6c757d;
+  font-size: 0.85em;
+  margin-top: 10px;
+  margin-bottom: 2px;
+  font-weight: 500;
+}
+
+.rp_h {
+  color: #333;
+  font-size: 1em;
+  font-weight: 600;
+  padding: 5px 0;
+  margin-bottom: 15px;
+  border-bottom: 1px dashed #eee;
+}
+
+.rp_action {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn-link {
+  display: block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  flex-grow: 1;
+  max-width: 150px;
+  text-align: center;
+  border: 2px solid;
+}
+
+.edit_btn {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.edit_btn:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+  border-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  border-color: #c82333;
+}
+
+.riwayat_pendaftaran p[style] {
+  text-align: center;
+  color: #555;
+}
+
+.top-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+  .riwayat_pendaftaran {
+    margin: 15px auto;
+    padding: 20px;
+    width: 95%;
+  }
+
+  .rp_action {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-link {
+    max-width: none;
+  }
+}
+
+/* Edit Profil SIswa */
+.edit_profil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 90%;
+  max-width: 450px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.avatar_wrap {
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #007bff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.avatar_placeholder {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #007bff;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: bold;
+  border: 4px solid #007bff;
+}
+
+.edit_profil h2 {
+  color: #333;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #dee2e6;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+.ep_s {
+  text-align: left;
+  color: #6c757d;
+  font-size: 14px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: 500;
+  width: 100%;
+  max-width: 350px;
+}
+
+.ep_input {
+  width: 100%;
+  max-width: 350px;
+  padding: 10px;
+  margin-bottom: 8px;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+.ep_input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+.sukses {
+  color: #28a745;
+  background-color: #d4edda;
+  border: 1px solid #28a745;
+  border-radius: 4px;
+  padding: 8px 15px;
+  font-size: 14px;
+  text-align: center;
+  width: 100%;
+  max-width: 350px;
+  box-sizing: border-box;
+}
+
+.profile-actions {
+  margin-top: 25px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  width: 100%;
+}
+
+.btn-link {
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  flex-grow: 1;
+  text-align: center;
+  border: 2px solid;
+  cursor: pointer;
+}
+
+button[type="submit"].btn-link {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+button[type="submit"].btn-link:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+  border-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  border-color: #c82333;
+}
+
+@media (max-width: 500px) {
+  .edit_profil {
+    padding: 20px;
+    margin: 15px auto;
+  }
+
+  .ep_s,
+  .ep_input,
+  .sukses,
+  .profile-actions {
+    max-width: 100%;
+  }
+
+  .profile-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
 /* Daftar Jurusan Siswa */
@@ -1142,11 +1486,12 @@ footer li {
   border-radius: 8px;
 }
 
-.error {
+.error_login {
   color: #dc3545;
   font-size: 12px;
   display: block;
   margin-top: 5px;
+  text-align: center;
 }
 
 .form-actions {
