@@ -9,15 +9,15 @@
     <h1>Daftar Kebutuhan SMA Bakti Wiyata</h1>
     <table>
         <tr>
-            <th>Kode</th>
+            <th>No</th>
             <th>Kebutuhan</th>
         </tr>
-        <?php foreach($kebutuhan as $data):?>
+        <?php $no=1; foreach($kebutuhan as $data):?>
         <tr>
-            <td><?php echo $data['ID_KEBUTUHAN']?></td>
+            <td><?php echo $no ?></td>
             <td><?php echo $data['NAMA_KEBUTUHAN']?></td>
         </tr>
-        <?php endforeach; ?>
+        <?php $no+=1; endforeach; ?>
     </table>
     </div>
 </div>

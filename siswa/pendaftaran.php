@@ -387,16 +387,19 @@ $kebutuhan=kebutuhan();
 
         <div class="form_isi">
             <label>Keadaan Ibu : <span class="wajib">*</span></label>
-                <div class="radio-group-horizontal">
-                    <input type="radio" id="masih_hidup" name="keadaan_ibu" value="<?= (isset($_POST['keadaan_ibu']) && $_POST['keadaan_ibu'] === 'masih hidup') ? 'checked' : '' ?>">
-                    <label for="masih_hidup">Masih Hidup</label>
+            <div class="radio-group-horizontal">
+                <input type="radio" id="ibu_masih_hidup" name="keadaan_ibu" value="masih hidup"
+                    <?= (isset($_POST['keadaan_ibu']) && $_POST['keadaan_ibu'] === 'masih hidup') ? 'checked' : '' ?>>
+                <label for="ibu_masih_hidup">Masih Hidup</label>
 
-                    <input type="radio" id="sta" name="keadaan_ibu" value="<?= (isset($_POST['keadaan_ibu']) && $_POST['keadaan_ibu'] === 'meninggal') ? 'checked' : '' ?>">
-                    <label for="sta">Sudah Tidak Ada</label>
-                    <?php if(!empty($errors['keadaan_ibu'])): ?>
+                <input type="radio" id="ibu_meninggal" name="keadaan_ibu" value="meninggal"
+                    <?= (isset($_POST['keadaan_ibu']) && $_POST['keadaan_ibu'] === 'meninggal') ? 'checked' : '' ?>>
+                <label for="ibu_meninggal">Sudah Tidak Ada</label>
+
+                <?php if(!empty($errors['keadaan_ibu'])): ?>
                     <span class="error"><?= $errors['keadaan_ibu'] ?></span>
-                    <?php endif; ?>
-                </div>
+                <?php endif; ?>
+            </div>
         </div>
 
         <div class="form_isi">

@@ -12,12 +12,14 @@
             <th>Nama Jurusan</th>
             <th>Kouta</th>
         </tr>
-        <?php foreach($jurusan as $data):?>
+        <?php $no=1;foreach($jurusan as $data):?>
         <tr>
-            <td><?= $data['ID_JURUSAN'] ?></td>
+            <td><?= $no ?></td>
             <td><?= $data['NAMA_JURUSAN'] ?></td>
             <td><?= $data['KUOTA_JURUSAN'] ?></td>
         </tr>
-        <?php endforeach; ?>
+        <?php 
+        $no+=1;
+        endforeach; ?>
     </table>
 </div>

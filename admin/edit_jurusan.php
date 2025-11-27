@@ -1,21 +1,29 @@
-<!-- halaman untuk edit jurusan -->
 <?php
 require_once '../database.php';
+require_once '../validasi.php';
+
+$id = $_GET["ID_JURUSAN"] ?? null;
+$kuota = $_GET["KUOTA_JURUSAN"] ?? null;
+$errors = [];
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $kuotaBaru = $_POST["KUOTA_JURUSAN"];
+
+    val_required($errors, "kuota", $kuotaBaru, "Kuota wajib diisi.");
+    val_numeric($errors, "kuota", $kuotaBaru, "Kuota harus berupa angka.");
+
+    if (empty($errors)) {
+
+        edit_kuota($id, $kuotaBaru);
+        exit();
+    }
+}
+
 require_once '../includes/header.php';
 require_once '../includes/navbarAdmin.php';
-
-    $id=$_GET["ID_JURUSAN"]; //mengambil id jurusan dari url
-    $kuota=$_GET["KUOTA_JURUSAN"]; //mengambil kuota jurusan dari url
-    $errors=[];
-    if ($_SERVER["REQUEST_METHOD"]=="POST") {
-        val_required($errors,"kuota",$_POST["KUOTA_JURUSAN"],"Kuota wajib diisi."); //validasi kuota
-        val_numeric($errors,"kuota",$_POST["KUOTA_JURUSAN"],"Kuota harus berupa angka."); //validasi kuota
-        if(empty($errors)){
-            edit_kuota($id);
-            header("Location:jurusan.php");
-        }
-    }
 ?>
+
 <div class="edit_kouta">
     <div>
         <form method="POST">

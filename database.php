@@ -96,11 +96,11 @@ function siswa_jurusan($jurusan){
     return $daftar;
 }
 // fungsi edit kuota
-function edit_kuota($id){
+function edit_kuota($id,$data){
     global $pdo;
     $stmnt=$pdo->prepare("UPDATE jurusan SET KUOTA_JURUSAN = :KUOTA_JURUSAN WHERE ID_JURUSAN = :id");
     $stmnt->execute([
-        ":KUOTA_JURUSAN"=>$_POST["KUOTA_JURUSAN"],
+        ":KUOTA_JURUSAN"=>$data,
         ":id"=>$id
     ]);
     header("Location:jurusan.php");
