@@ -15,6 +15,7 @@ $daftar=pendaftar();
                 <th>Nama</th>
                 <th>Jurusan</th>
                 <th>Kebutuhan</th>
+                <th>Dokumen</th>
                 <th>Status</th>
                 <th>Aksi</th>
             </tr>
@@ -24,6 +25,14 @@ $daftar=pendaftar();
                 <td><?=$row['NAMA_LENGKAP']?></td>
                 <td><?=$row['NAMA_JURUSAN']?></td>
                 <td><?=$row['NAMA_KEBUTUHAN']?></td>
+                <td>
+                    <ul>
+                        <li><a target="_blank" href="../kk/<?=$row['KARTU_KELUARGA'] ?>"><?=$row['KARTU_KELUARGA'] ?></a></li>
+                        <li><a target="_blank" href="../akta/<?=$row['AKTA_KELAHIRAN'] ?>"><?=$row['AKTA_KELAHIRAN'] ?></a></li>
+                        <li><a target="_blank" href="../ijazah/<?=$row['IJAZAH'] ?>"><?=$row['IJAZAH'] ?></a></li>
+                        <li><a target="_blank" href="../foto_pas/<?=$row['FOTO_SISWA'] ?>"><?=$row['FOTO_SISWA'] ?></a></li>
+                    </ul>
+                </td>
                 <td><?=$row['KET_STATUS']?></td>
                 <td>
                     <a href="edit_status.php?ID_PENDAFTARAN=<?=$row['ID_PENDAFTARAN']?>&kondisi=lulus" class="btn_a">

@@ -32,7 +32,7 @@ function siswa_daftar(){
 function pendaftar(){
     global $pdo;
     $stmnt=$pdo->prepare
-    ("SELECT P.TANGGAL_PENDAFTARAN,P.ID_PENDAFTARAN,P.NAMA_LENGKAP,J.NAMA_JURUSAN,S.KET_STATUS, GROUP_CONCAT(K.NAMA_KEBUTUHAN SEPARATOR ',') NAMA_KEBUTUHAN
+    ("SELECT P.TANGGAL_PENDAFTARAN,P.KARTU_KELUARGA,P.AKTA_KELAHIRAN,P.IJAZAH,P.FOTO_SISWA,P.ID_PENDAFTARAN,P.NAMA_LENGKAP,J.NAMA_JURUSAN,S.KET_STATUS, GROUP_CONCAT(K.NAMA_KEBUTUHAN SEPARATOR ',') NAMA_KEBUTUHAN
     FROM pendaftaran P
     JOIN siswa A ON A.ID_SISWA = P.ID_SISWA
     JOIN status S ON S.ID_STATUS = P.ID_STATUS
@@ -143,7 +143,6 @@ function login($user,$pass){
         ':pass'=>md5($pass)
     ]);
     $data=$stmnt->fetch();
-    $_SESSION['login']=true;
     return $data;
 }
 // fungsi proses pendaftaran
@@ -193,15 +192,15 @@ function proses_pendaftaran( array $data,$file){
             ':ID_JURUSAN'=>$_POST['id_jurusan'],
             ':ID_SISWA'=> $_POST['id_akun'],
             ':NAMA_LENGKAP'=> $_POST['nama_siswa'],
-            ':KARTU_KELUARGA'=>$name_kk,
-            ':AKTA_KELAHIRAN'=>$name_akta,
-            ':IJAZAH'=>$name_ijazah,
+            ':KARTU_KELUARGA'=>$name_kk_new,
+            ':AKTA_KELAHIRAN'=>$name_akta_new,
+            ':IJAZAH'=>$name_ijazah_new,
             ':GENDER'=>$_POST['jenis_kelamin'],
             ':ALAMAT_SISWA'=>$_POST['alamat_siswa'],
             ':TEMPAT_LAHIR'=>$_POST['tempat_lahir'],
             ':TANGGAL_LAHIR'=>$_POST['tanggal_lahir'],
             ':AGAMA'=>$_POST['agama'],
-            ':FOTO_SISWA'=>$name_foto,
+            ':FOTO_SISWA'=>$name_foto_new,
             ':NO_HP_SISWA'=>$_POST['no_hp_siswa'],
             ':NAMA_AYAH'=>$_POST['nama_ayah'],
             ':KEADAAN_AYAH'=>$_POST['keadaan_ayah'],

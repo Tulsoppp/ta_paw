@@ -1,18 +1,6 @@
 <?php
 require_once 'cekLoginSiswa.php';
 
-// Pastikan yang login adalah siswa
-if (!isset($_SESSION['login']) || empty($_SESSION['isSiswa'])) {
-    header("Location: ../login.php");
-    exit();
-}
-
-// Ambil ID siswa dari session (di-set di login.php sebagai ID_USER)
-if (!isset($_SESSION['ID_USER'])) {
-    echo "<p>Session ID siswa tidak ditemukan. Silakan login ulang.</p>";
-    exit();
-}
-
 $idSiswa = $_SESSION['ID_USER'];
 
 require_once "../database.php";

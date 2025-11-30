@@ -1,11 +1,5 @@
 <?php
 require_once 'cekLoginSiswa.php';
-if (!isset($_SESSION['isSiswa']) || $_SESSION['isSiswa'] != true) {
-    require_once '../cekLogin.inc';
-    exit();
-}
-if (!isset($_SESSION['ID_USER'])) exit();
-
 $idSiswa = $_SESSION['ID_USER'];
 require_once "../database.php";
 ?>
@@ -23,6 +17,7 @@ $stmt = $pdo->prepare("
     JOIN status s ON s.ID_STATUS = p.ID_STATUS
     WHERE p.ID_SISWA = :id
     GROUP BY p.ID_PENDAFTARAN
+    LIMIT 1
 ");
 $stmt->execute([':id' => $idSiswa]);
 $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
