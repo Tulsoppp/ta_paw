@@ -1,10 +1,13 @@
 <!-- halaman untuk menambah jurusan baru -->
 <?php
-    require_once 'cekLoginAdmin.php';
-    require_once "../database.php";
-    require_once "../includes/header.php";
-    require_once "../includes/navbarAdmin.php";
-    require_once "../validasi.php";
+    // Mengecek apakah admin sudah login
+require_once 'cekLoginAdmin.php';
+// Header dan navbar admin
+require_once '../includes/header.php';
+require_once '../includes/navbarAdmin.php';
+// Koneksi ke databse dan fungsi Validasi
+require_once '../database.php';
+require_once "../validasi.php";
 
     $errors=[];
     if($_SERVER["REQUEST_METHOD"]=="POST"){

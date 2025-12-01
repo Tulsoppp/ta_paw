@@ -1,8 +1,11 @@
 <!-- halaman untuk menampilkan pendaftar -->
 <?php
+// Mengecek apakah admin sudah login
 require_once 'cekLoginAdmin.php';
+// Header dan Navbar admin
 require_once '../includes/header.php';
 require_once '../includes/navbarAdmin.php';
+// Koneksi ke database dan fungsi
 require_once '../database.php';
 $daftar=pendaftar();
 ?>

@@ -1,6 +1,9 @@
 <?php
+// Mengecek apakah siswa sudah login 
     require_once 'cekLoginSiswa.php';
+// Koneksi database dan fungsi
     require_once '../database.php';
+// Header & navbar siswa
     require_once '../includes/header.php';
     require_once '../includes/navbarSiswa.php';
     $jurusan=jurusan();

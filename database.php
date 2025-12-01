@@ -6,7 +6,6 @@ $db='ppdb';
 try {
     $pdo=new PDO("mysql:host=$host;dbname=$db",$user,$password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-    // echo 'Koneksi Berhasil';
 } catch (PDOException $e) {
     echo 'koneksi gagal'.$e->getMessage();
 };
@@ -104,7 +103,19 @@ function edit_kuota($id,$data){
         ":id"=>$id
     ]);
     header("Location:jurusan.php");
+
 }
+
+function edit_namaJurusan($id,$data){
+    global $pdo;
+    $stmnt=$pdo->prepare("UPDATE jurusan SET NAMA_JURUSAN = :NAMA_JURUSAN WHERE ID_JURUSAN = :id");
+    $stmnt->execute([
+        ":NAMA_JURUSAN"=>$data,
+        ":id"=>$id
+    ]);
+    header("Location:jurusan.php");
+}
+
 // fungsi menampilkan jurusan
 function jurusan(){
     global $pdo;
