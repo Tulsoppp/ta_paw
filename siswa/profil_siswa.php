@@ -38,7 +38,7 @@ foreach ($extensions as $ext) {
     }
 }
 ?>
-
+<!-- Section menampilkan halaman profil -->
 <div class="profil_siswa">
     <div class="p_s">
 
@@ -53,10 +53,10 @@ foreach ($extensions as $ext) {
         </div>
 
         <div class="ps_label">Username</div>
-        <div class="ps_h"><?php echo $nama; ?></div>
+        <div class="ps_h"><?php echo htmlspecialchars($nama); ?></div>
 
         <div class="ps_label">Email</div>
-        <div class="ps_h"><?php echo $email; ?></div>
+        <div class="ps_h"><?php echo htmlspecialchars($email); ?></div>
 
         <div class="ps_label">Password</div>
         <div class="ps_h">******</div>

@@ -177,7 +177,7 @@ $kebutuhan=kebutuhan();
             <input type="hidden" value="<?= $_SESSION['ID_USER'] ?>" name="id_akun">
         </div>
         
-
+<!-- Bagian NISN -->
         <div class="form_isi">
             <span class="wajib">( * ) Wajib diisi</span>
             <label for="nisn">NISN : <span class="wajib">*</span></label>
@@ -186,7 +186,7 @@ $kebutuhan=kebutuhan();
             <span class="error"><?= $errors['nisn'] ?></span>
             <?php endif; ?>
         </div>
-
+<!-- Nama Lengkap -->
         <div class="form_isi">
             <label for="nama_lengkap">Nama Lengkap : <span class="wajib">*</span></label>
             <input type="text" id="nama_lengkap" name="nama_siswa" placeholder="Nama Lengkap" value="<?= $nama_siswa?>">
@@ -194,7 +194,7 @@ $kebutuhan=kebutuhan();
             <span class="error"><?= $errors['nama_siswa'] ?></span>
             <?php endif; ?>
         </div>
-
+<!-- Jenis Kelamin -->
         <div class="form_isi">
             <label>Jenis Kelamin : <span class="wajib">*</span></label>
             <div class="radio-group-horizontal">
@@ -208,15 +208,15 @@ $kebutuhan=kebutuhan();
             <span class="error"><?= $errors['jenis_kelamin'] ?></span>
             <?php endif; ?>
         </div>
-
+<!-- Agama -->
         <div class="form_isi">
-            <label>Agama : <span class="wajib">*</span></label>
+            <label for="agama">Agama : <span class="wajib">*</span></label>
             <input type="text" id="agama" name="agama" placeholder="Agama" value="<?= $agama?> ">
             <?php if(!empty($errors['agama'])): ?>
                 <span class="error"><?= $errors['agama'] ?></span>
             <?php endif; ?>
         </div>
-        
+
         <div class="form_isi">
             <label for="tempat_lahir">Tempat Lahir : <span class="wajib">*</span></label>
             <input type="text" id="tempat_lahir" name="tempat_lahir" placeholder="Tempat Lahir" value="<?= $tempat_lahir?>">
@@ -224,7 +224,7 @@ $kebutuhan=kebutuhan();
             <span class="error"><?= $errors['tempat_lahir'] ?></span>
             <?php endif; ?>
         </div>
-        
+<!-- Tanggal Lahir -->
         <div class="form_isi">
             <label for="tgl_lahir">Tanggal Lahir : <span class="wajib">*</span></label>
             <input type="text" id="tgl_lahir" name="tanggal_lahir" placeholder="Tahun-Bulan-Hari" value="<?= $tgl_lahir?>">
@@ -233,6 +233,7 @@ $kebutuhan=kebutuhan();
             <?php endif; ?>
         </div>
         
+<!-- Alamat siswa -->
         <div class="form_isi">
             <label for="alamat_siswa">Alamat Siswa : <span class="wajib">*</span></label>
             <input type="text" id="alamat_siswa" name="alamat_siswa" placeholder="Alamat Siswa" value="<?= $alamat_siswa?>">
@@ -240,7 +241,7 @@ $kebutuhan=kebutuhan();
             <span class="error"><?= $errors['alamat_siswa'] ?></span>
             <?php endif; ?>
         </div>
-        
+<!-- No Hp Siswa -->
         <div class="form_isi">
             <label for="hp_siswa">No HP Siswa : <span class="wajib">*</span></label>
             <input type="text" id="hp_siswa" name="no_hp_siswa" placeholder="No Hp Siswa" value="<?= $no_hp_siswa?>">
@@ -248,7 +249,7 @@ $kebutuhan=kebutuhan();
                 <span class="error"><?= $errors['no_hp_siswa'] ?></span>
             <?php endif; ?>
         </div>
-
+<!-- Jurusan -->
         <div class="form_isi">
             <label for="jurusan">Pilihan Jurusan :<span class="wajib">*</span></label>
             <select id="jurusan" name="id_jurusan">
@@ -275,6 +276,7 @@ $kebutuhan=kebutuhan();
                             id="<?= $kbth['ID_KEBUTUHAN'] ?>"
                             name="kebutuhan[]"
                             value="<?= $kbth['ID_KEBUTUHAN'] ?>" 
+                            <?= (!empty($_POST['kebutuhan']) && in_array($kbth['ID_KEBUTUHAN'], $_POST['kebutuhan'])) ? 'checked' : '' ?>
                         >
                         <span><?= $kbth['NAMA_KEBUTUHAN'] ?></span>
                     </div>
@@ -340,10 +342,10 @@ $kebutuhan=kebutuhan();
         <div class="form_isi">
                 <label>Keadaan Ayah : <span class="wajib">*</span></label>
                 <div class="radio-group-horizontal">
-                    <input type="radio" id="masih_hidup" name="keadaan_ayah" value="Masih Hidup" <?= (isset($_POST['keadaan_ayah']) && $_POST['keadaan_ayah'] === 'masih hidup') ? 'checked' : '' ?>>
+                    <input type="radio" id="masih_hidup" name="keadaan_ayah" value="Masih Hidup" <?= (isset($_POST['keadaan_ayah']) && $_POST['keadaan_ayah'] === 'Masih Hidup') ? 'checked' : '' ?>>
                     <label for="masih_hidup">Masih Hidup</label>
                     
-                    <input type="radio" id="sudah_tidak_ada" name="keadaan_ayah" value="Sudah Tidak Ada" <?= (isset($_POST['keadaan_ayah']) && $_POST['keadaan_ayah'] === 'meninggal') ? 'checked' : '' ?>>
+                    <input type="radio" id="sudah_tidak_ada" name="keadaan_ayah" value="Sudah Tidak Ada" <?= (isset($_POST['keadaan_ayah']) && $_POST['keadaan_ayah'] === 'Sudah Tidak Ada') ? 'checked' : '' ?>>
                     <label for="sta">Sudah Tidak Ada</label>
                     <?php if(!empty($errors['keadaan_ayah'])): ?>
                         <span class="error"><?= $errors['keadaan_ayah'] ?></span>
@@ -405,11 +407,11 @@ $kebutuhan=kebutuhan();
             <label>Keadaan Ibu : <span class="wajib">*</span></label>
             <div class="radio-group-horizontal">
                 <input type="radio" id="ibu_masih_hidup" name="keadaan_ibu" value="Masih Hidup"
-                    <?= (isset($_POST['keadaan_ibu']) && $_POST['keadaan_ibu'] === 'masih hidup') ? 'checked' : '' ?>>
+                    <?= (isset($_POST['keadaan_ibu']) && $_POST['keadaan_ibu'] === 'Masih Hidup') ? 'checked' : '' ?>>
                 <label for="ibu_masih_hidup">Masih Hidup</label>
 
                 <input type="radio" id="ibu_meninggal" name="keadaan_ibu" value="Sudah Tidak Ada"
-                    <?= (isset($_POST['keadaan_ibu']) && $_POST['keadaan_ibu'] === 'meninggal') ? 'checked' : '' ?>>
+                    <?= (isset($_POST['keadaan_ibu']) && $_POST['keadaan_ibu'] === 'Sudah Tidak Ada') ? 'checked' : '' ?>>
                 <label for="ibu_meninggal">Sudah Tidak Ada</label>
 
                 <?php if(!empty($errors['keadaan_ibu'])): ?>

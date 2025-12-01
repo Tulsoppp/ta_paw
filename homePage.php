@@ -10,6 +10,7 @@
 	</div>
 		<a href="/ta_paw/siswa/pendaftaran.php"  class="btn_a besar">Daftar Sekarang</a>
 </div>
+<!-- Section Visi Misi -->
 <div class="container">
 	<div class="dashboard1" id="vimisi">
 		<h1>VISI</h1>
@@ -23,6 +24,7 @@
 			<li>Membangun Kemitraan Strategis: Menjalin sinergi yang kuat dan berkelanjutan dengan orang tua, lembaga layanan profesional (psikolog/terapis), dan komunitas untuk menjamin tumbuh kembang holistik peserta didik.</li>
 		</ol>
 	</div>
+	<!-- Section jadwal Pendaftaran online -->
 	<div class="backgron_ppdb" id="pendaftaran">
 		<h1 class="judul_tengah">Jadwal Pendaftaran online</h1>
 		<div class="panduan_ppdb_tgl">
@@ -36,6 +38,7 @@
 			</div>
 		</div>
 	</div>
+	<!-- Section Alur pendaftaran -->
 	<div class="backgron_ppdb" id="alur">
 		<h1 class="judul_tengah">Alur Pendaftaran PPDB</h1>
 			<div class="panduan_ppdb">
@@ -53,6 +56,7 @@
 			</div>
 			</div>
 	</div>
+	<!-- Section Detail Dokumen -->
 	<div class="backgron_ppdb" id="detail">
 		<div class="bacgron_detail">
 			<h1>Detail Dokumen PPDB</h1>

@@ -1,11 +1,15 @@
 <!-- halaman untuk menampilkan daftar jurusan -->
 <?php
+// Mengecek apakah admin sudah login
     require_once 'cekLoginAdmin.php';
+// Koneksi ke database dan fungsi
     require_once '../database.php';
+// Header dan navbar admin
     require_once '../includes/header.php';
     require_once '../includes/navbarAdmin.php';
     $jurusan=jurusan();
 ?>
+<!--  -->
 <div class="jurusan">
     <div>
     <h1>Daftar Jurusan</h1>

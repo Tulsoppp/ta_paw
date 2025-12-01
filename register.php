@@ -1,8 +1,10 @@
 <?php
 // halaman untuk registrasi user baru
     require_once 'database.php';
+// Header dan navbar
     require_once 'includes/header.php';
     require_once 'includes/navbar.php';
+// fungsi validasi
     require_once 'validasi.php';
 
 $errors = []; // Wadah untuk menampung error
