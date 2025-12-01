@@ -20,7 +20,7 @@
             <td><?php echo $data['ID_KEBUTUHAN']?></td>
             <td><?php echo $data['NAMA_KEBUTUHAN']?></td>
             <td>
-                <a href="hapus_kebutuhan.php?ID_KEBUTUHAN=<?=$data['ID_KEBUTUHAN']?>" class="btn_a hapus">
+                <a href="kh_kebutuhan.php?ID_KEBUTUHAN=<?=$data['ID_KEBUTUHAN']?>" class="btn_a hapus">
                     Hapus
                 </a>
             </td>

@@ -29,7 +29,7 @@
                 <a href="edit_jurusan.php?ID_JURUSAN=<?=$data['ID_JURUSAN']?>&KUOTA_JURUSAN=<?=$data['KUOTA_JURUSAN']?>" class="btn_a">
                     Edit
                 </a>
-                <a href="hapus_jurusan.php?ID_JURUSAN=<?=$data['ID_JURUSAN']?>" class="btn_a hapus">
+                <a href="kh_jurusan.php?ID_JURUSAN=<?=$data['ID_JURUSAN']?>" class="btn_a hapus">
                     Hapus
                 </a>
             </td>

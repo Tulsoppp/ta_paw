@@ -6,13 +6,14 @@ require_once '../includes/header.php';
 require_once '../includes/navbarAdmin.php';
 require_once "../database.php";
 
-$id = $_GET["ID_JURUSAN"] ?? null;
-
-// Jika ID tidak ada, balik
-if (!$id) {
-    header("Location: jurusan.php");
-    exit;
+if (isset($_GET["ID_JURUSAN"])) {
+    $id=$_GET["ID_JURUSAN"];
+        $stmnt=$pdo->prepare("DELETE FROM jurusan WHERE ID_JURUSAN=:id");
+        $stmnt->bindValue(':id',$id);
+        $stmnt->execute();
+    header("Location:jurusan.php");
 }
+?>
 
 // Ambil nama jurusan untuk ditampilkan
 $stm = $pdo->prepare("SELECT NAMA_JURUSAN FROM jurusan WHERE ID_JURUSAN = :id");
