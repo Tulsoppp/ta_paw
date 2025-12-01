@@ -1641,33 +1641,45 @@ button[type="submit"].btn-link:hover {
 
 /* pendaftran Selesai */
 .pendaftran_selesai {
-  font-family: sans-serif;
-  align-items: center;
-  background-color: #fff;
-  margin: 75px;
-  border-radius: 15px;
-  margin-left: 25%;
-  margin-right: 25%;
-  box-shadow: 5px 5px 0 0 rgb(160, 160, 160);
-  padding: 40px;
+  width: 75%;
+  margin: 50px auto;
+}
+
+.pendaftran_selesai div {
+  background-color: white;
+  width: 100%;
+  padding: 1% 2%;
+  border-radius: 10px;
+}
+
+.pendaftran_selesai h1 {
   text-align: center;
+  margin-bottom: 20px;
+  color: #333;
 }
 
-.pendaftran_selesai p {
+.ps_gap {
   display: flex;
+  gap: 65px;
   justify-content: center;
-  gap: 10px;
 }
 
-.pendaftran_selesai a {
-  color: #006ff6;
-  font-weight: bold;
+.ps_beranda {
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.pendaftran_selesai h2 {
-  color: #1565c0;
-  display: flex;
-  justify-content: center;
+.ps_riwayat {
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Konfirmasi Hapus Kebutuhan */
