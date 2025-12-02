@@ -15,23 +15,6 @@ if (isset($_GET["ID_JURUSAN"])) {
 }
 ?>
 
-// Ambil nama jurusan untuk ditampilkan
-$stm = $pdo->prepare("SELECT NAMA_JURUSAN FROM jurusan WHERE ID_JURUSAN = :id");
-$stm->execute([':id' => $id]);
-$jurusan = $stm->fetchColumn();
-
-// Jika tombol konfirmasi hapus ditekan
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-
-    $stmnt = $pdo->prepare("DELETE FROM jurusan WHERE ID_JURUSAN = :id");
-    $stmnt->bindValue(':id', $id);
-    $stmnt->execute();
-
-    header("Location: jurusan.php");
-    exit();
-}
-?>
-
 <h2>Konfirmasi Hapus</h2>
 <p>Apakah Anda yakin ingin menghapus jurusan <b><?= htmlspecialchars($jurusan) ?></b>?</p>
 

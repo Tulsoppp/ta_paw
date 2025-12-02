@@ -32,7 +32,7 @@ if (!$list) {
     <p style="text-align:center;margin-top:10px;">Belum ada data pendaftaran.</p>
     <div class="rp_action" style="margin-top:20px;">
         <a href="pendaftaran.php" class="btn-link">Daftar</a>
-        <a href="profil_siswa.php" class="btn-link btn-danger">Kembali</a>
+        <a href="index.php" class="btn-link btn-danger">Kembali</a>
     </div>
 </div>
 <?php

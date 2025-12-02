@@ -8,7 +8,7 @@
 		<li><a href="kebutuhan.php">Kebutuhan</a></li>
 	</ul>
 	<ul>
-		<li><a href="../logout.php" class="btn_a hapus">logout</a></li>
+		<li><a href="kl_admin.php" class="btn_a hapus">logout</a></li>
 	</ul>
 </div>
 </header>

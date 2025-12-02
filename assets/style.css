@@ -102,7 +102,7 @@ a {
 header {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 1;
   background-color: #fff;
 }
 .dropdown {
@@ -1647,7 +1647,7 @@ button[type="submit"].btn-link:hover {
 
 .pendaftran_selesai div {
   background-color: white;
-  width: 100%;
+  width: 95%;
   padding: 1% 2%;
   border-radius: 10px;
 }
@@ -1660,7 +1660,7 @@ button[type="submit"].btn-link:hover {
 
 .ps_gap {
   display: flex;
-  gap: 65px;
+  gap: 50px;
   justify-content: center;
 }
 
@@ -1748,37 +1748,25 @@ button[type="submit"].btn-link:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Konfirmasi Loagouta Admin dan Siswa */
-.kl_SA {
+/* Konfirmasi Loagouta Siswa */
+.kl_S {
   width: 50%;
   margin: 10% auto;
+  display: flex;
+  justify-content: center;
 }
 
-.kl_SA div {
+.kl_S div {
   background-color: white;
-  width: 100%;
+  width: 90%;
   padding: 1% 2%;
   border-radius: 10px;
 }
 
-.kl_SA h2 {
+.kl_S h2 {
   text-align: center;
   margin-bottom: 20px;
   color: #333;
-}
-
-.kl_SA th,
-.kl_SA td {
-  padding: 12px 15px;
-  border: 1px solid #ddd;
-  text-align: center;
-}
-
-.kl_SA table {
-  width: 100%;
-  border-collapse: collapse;
-  background: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .kl_gap {
@@ -1787,7 +1775,7 @@ button[type="submit"].btn-link:hover {
   justify-content: center;
 }
 
-.ya_kl_sa {
+.ya_kl_s {
   background-color: #dc3545;
   color: white;
   border: none;
@@ -1796,12 +1784,12 @@ button[type="submit"].btn-link:hover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.ya_kl_sa button {
+.ya_kl_s button {
   background-color: #c82333;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.tdk_kl_sa {
+.tdk_kl_s {
   background-color: #1253f7;
   color: white;
   border: none;
@@ -1810,7 +1798,62 @@ button[type="submit"].btn-link:hover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.tdk_kl_sa button {
+.tdk_kl_s button {
+  background-color: #5773f1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Konfirmasi keluar Admin */
+.kl_A {
+  width: 60%;
+  margin: 10% auto;
+  display: flex;
+  justify-content: center;
+}
+
+.kl_A div {
+  background-color: white;
+  width: 90%;
+  padding: 1% 2%;
+  border-radius: 10px;
+}
+
+.kl_A h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.kl_gap {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+}
+
+.ya_kl_a {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ya_kl_a button {
+  background-color: #c82333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tdk_kl_a {
+  background-color: #1253f7;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tdk_kl_a button {
   background-color: #5773f1;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

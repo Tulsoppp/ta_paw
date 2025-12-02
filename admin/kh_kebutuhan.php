@@ -28,7 +28,7 @@
     <table>
       <tr>
           <td class="khk_gap">
-            <a href="jurusan.php" class="khk_tidak">
+            <a href="kebutuhan.php" class="khk_tidak">
               Kembali
             </a>
           </td>
@@ -48,7 +48,7 @@
       <tr>
           <td><?= $kebutuhan["NAMA_KEBUTUHAN"] ?></td>
           <td class="khk_gap">
-            <a href="hapus_kebutuhan.php?ID_JURUSAN=<?=$id_kebutuhan?>" class="khk_hapus">
+            <a href="hapus_kebutuhan.php?ID_KEBUTUHAN=<?=$id_kebutuhan?>" class="khk_hapus">
               Hapus
             </a>
             <a href="kebutuhan.php" class="khk_tidak">
