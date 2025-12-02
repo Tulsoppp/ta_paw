@@ -8,27 +8,10 @@ require_once "../database.php";
 
 if (isset($_GET["ID_JURUSAN"])) {
     $id=$_GET["ID_JURUSAN"];
-        $stmnt=$pdo->prepare("SELECT NAMA_KEBUTUHAN DELETE FROM jurusan WHERE ID_JURUSAN=:id");
+        $stmnt=$pdo->prepare("DELETE FROM jurusan WHERE ID_JURUSAN=:id");
         $stmnt->bindValue(':id',$id);
         $stmnt->execute();
     header("Location:jurusan.php");
-}
-?>
-
-// Ambil nama jurusan untuk ditampilkan
-$stm = $pdo->prepare("SELECT NAMA_JURUSAN FROM jurusan WHERE ID_JURUSAN = :id");
-$stm->execute([':id' => $id]);
-$jurusan = $stm->fetchColumn();
-
-// Jika tombol konfirmasi hapus ditekan
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-
-    $stmnt = $pdo->prepare("DELETE FROM jurusan WHERE ID_JURUSAN = :id");
-    $stmnt->bindValue(':id', $id);
-    $stmnt->execute();
-
-    header("Location: jurusan.php");
-    exit();
 }
 ?>
 

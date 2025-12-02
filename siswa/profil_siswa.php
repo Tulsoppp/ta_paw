@@ -63,7 +63,7 @@ foreach ($extensions as $ext) {
 
         <div class="profile-actions">
             <a href="edit_siswa.php" class="btn-link">Edit Profil</a>
-            <a href="../logout.php" class="btn-link btn-danger">Logout</a>
+            <a href="kl_siswa.php" class="btn-link btn-danger">Logout</a>
         </div>
 
     </div>
