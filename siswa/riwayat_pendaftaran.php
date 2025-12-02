@@ -5,9 +5,6 @@ $idSiswa = $_SESSION['ID_USER'];
 require_once "../database.php";
 ?>
 
-<?php require_once "../includes/header.php";?>
-<?php require_once "../includes/navbarSiswa.php";?>
-
 <?php
 $stmt = $pdo->prepare("
     SELECT p.*, j.NAMA_JURUSAN,GROUP_CONCAT(k.NAMA_KEBUTUHAN SEPARATOR ',') NAMA_KEBUTUHAN, KET_STATUS
@@ -19,14 +16,18 @@ $stmt = $pdo->prepare("
     WHERE p.ID_SISWA = :id
     GROUP BY p.ID_PENDAFTARAN
     LIMIT 1
-");
+    ");
 $stmt->execute([':id' => $idSiswa]);
 $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 function e($v){ return htmlspecialchars($v ?? '-', ENT_QUOTES, 'UTF-8');}
 
+<?php require_once "../includes/header.php";?>
+<?php require_once "../includes/navbarSiswa.php";?>
+
 if (!$list) {
 ?>
+    
 <div class="riwayat_pendaftaran">
     <h2>Riwayat Pendaftaran</h2>
     <p style="text-align:center;margin-top:10px;">Belum ada data pendaftaran.</p>

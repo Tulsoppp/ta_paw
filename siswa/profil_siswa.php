@@ -4,8 +4,6 @@ require_once 'cekLoginSiswa.php';
 $idSiswa = $_SESSION['ID_USER'];
 
 require_once "../database.php";
-require_once "../includes/header.php";
-require_once "../includes/navbarSiswa.php";
 
 // Ambil data siswa dari database (hanya data yang masih ada di database)
 try {
@@ -37,6 +35,8 @@ foreach ($extensions as $ext) {
         break;
     }
 }
+require_once "../includes/header.php";
+require_once "../includes/navbarSiswa.php";
 ?>
 <!-- Section menampilkan halaman profil -->
 <div class="profil_siswa">

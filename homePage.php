@@ -8,7 +8,7 @@
 		<p>Sekolah ini berkomitmen untuk menciptakan lingkungan belajar yang inklusif, aman, dan menyenangkan. 
 				Melalui pendekatan pendidikan berbasis kebutuhan individual, setiap peserta didik didampingi agar mampu berkembang sesuai potensi dan kemampuannya.</p>
 	</div>
-		<a href="https://ppdbsmkbhakti.gajahweb.tech/siswa/pendaftaran.php"  class="btn_a besar">Daftar Sekarang</a>
+		<a href="/siswa/pendaftaran.php"  class="btn_a besar">Daftar Sekarang</a>
 </div>
 <!-- Section Visi Misi -->
 <div class="container">
