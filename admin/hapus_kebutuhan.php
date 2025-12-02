@@ -6,6 +6,13 @@ require_once 'cekLoginAdmin.php';
 require_once '../includes/header.php';
 require_once '../includes/navbarAdmin.php';
 //Koneksi ke database dan fungsi
+if (isset($_GET["ID_KEBUTUHAN"])) {
+    $id=$_GET["ID_KEBUTUHAN"];
+        $stmnt=$pdo->prepare("DELETE FROM kebutuhan WHERE ID_KEBUTUHAN=:id");
+        $stmnt->bindValue(':id',$id);
+        $stmnt->execute();
+    header("Location:kebutuhan.php");
+}
 
 $id = $_GET["ID_KEBUTUHAN"] ?? null;
 
@@ -19,6 +26,8 @@ if (!$id) {
 $stm = $pdo->prepare("SELECT NAMA_KEBUTUHAN FROM kebutuhan WHERE ID_KEBUTUHAN = :id");
 $stm->execute([':id' => $id]);
 $nama = $stm->fetchColumn();
+
+
 
 // Jika admin menekan tombol "Ya, hapus"
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
