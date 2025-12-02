@@ -15,9 +15,12 @@
         }
     }
 ?>
-<form method="post">
+<div class="kl_A">
     <div>
-        <button type="submit" name="keluar">Ya, Logout</button>
-        <button type="submit" name="kembali"> batal </button>
+        <h2>Apakah Anda Yakin Mau Keluar Dari Akun Ini</h2>
+        <div class="kl_gap">
+            <a href="../index.php" class="ya_kl_a" name="keluar">Ya Laogut</a>
+            <a href="index.php" class="tdk_kl_a" name="tidak">Tidak</a>
+        </div>
     </div>
-</form>
+</div>
